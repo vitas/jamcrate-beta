@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-en="JamCrate — your practice crate for guitar" data-ru="JamCrate — ящик для гитарных тренировок">JamCrate — your practice crate for guitar</title>
-<meta name="description" content="macOS app for hobby guitarists: drop a backing track, hit Enter, play. Solo markers, loops, MIDI preset switching for M-VAVE Tank and Line 6 Helix.">
+<title data-en="JamCrate — everything you need to play a song" data-ru="JamCrate — всё, чтобы сыграть песню">JamCrate — everything you need to play a song</title>
+<meta name="description" content="JamCrate brings your backing tracks, tabs, chord sheets and song notes into one organized library on your Mac. macOS 14+, free beta.">
 <style>
   :root{
     --bg:#14161a; --panel:#1c1f25; --line:#2b2f37; --ink:#e8e6e1; --dim:#9aa0ab;
@@ -14,32 +14,34 @@
   body{margin:0;background:var(--bg);color:var(--ink);
        font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
   .wrap{max-width:880px;margin:0 auto;padding:0 24px}
-  header{padding:72px 0 40px;text-align:center}
+  header{padding:80px 0 44px;text-align:center}
   .pick{width:34px;height:42px;vertical-align:-8px;margin-right:10px}
-  h1{font-size:clamp(34px,6vw,52px);line-height:1.12;margin:0 0 14px;letter-spacing:-.02em}
-  .sub{color:var(--dim);font-size:clamp(17px,2.4vw,21px);max-width:640px;margin:0 auto}
-  .mac{display:inline-block;margin-top:18px;padding:4px 12px;border:1px solid var(--line);
+  h1{font-size:clamp(34px,6vw,50px);line-height:1.14;margin:0 0 18px;letter-spacing:-.02em}
+  .sub{color:var(--dim);font-size:clamp(17px,2.4vw,20px);max-width:660px;margin:0 auto 8px}
+  .rit{color:var(--ink);font-weight:600;margin-top:14px}
+  .mac{display:inline-block;margin-top:22px;padding:4px 12px;border:1px solid var(--line);
        border-radius:999px;color:var(--dim);font-size:13px}
   a{color:var(--gold2)}
-  .cta{display:inline-block;margin:10px 8px 0;padding:14px 28px;border-radius:12px;
+  .cta{display:inline-block;margin:26px 0 4px;padding:14px 30px;border-radius:12px;
        background:linear-gradient(180deg,var(--gold2),var(--gold));color:#231c0c;
        font-weight:700;text-decoration:none;font-size:18px}
   .cta:hover{filter:brightness(1.06)}
-  .fine{color:var(--dim);font-size:13px;margin-top:10px}
-  section{padding:44px 0;border-top:1px solid var(--line)}
+  .fine{color:var(--dim);font-size:13px;margin-top:8px}
+  section{padding:46px 0;border-top:1px solid var(--line)}
   h2{font-size:26px;margin:0 0 6px;letter-spacing:-.01em}
-  .lead{color:var(--dim);margin:0 0 26px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .lead{color:var(--dim);margin:0 0 28px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
-  .card h3{margin:0 0 6px;font-size:17px}
+  .card h3{margin:0 0 6px;font-size:16.5px}
   .card p{margin:0;color:var(--dim);font-size:15px}
-  .k{color:var(--ink);font-weight:600}
-  ol.steps{padding-left:22px;color:var(--dim)}
-  ol.steps b{color:var(--ink)}
-  code{background:var(--panel);border:1px solid var(--line);border-radius:6px;
-       padding:2px 7px;font-size:.92em;color:var(--gold2)}
   .beta{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 28px}
-  footer{padding:34px 0 60px;color:var(--dim);font-size:13px;border-top:1px solid var(--line);text-align:center}
+  ol.steps{padding-left:22px;color:var(--dim)}
+  ol.steps b,ol.steps strong{color:var(--ink)}
+  code{background:var(--bg);border:1px solid var(--line);border-radius:6px;
+       padding:2px 7px;font-size:.92em;color:var(--gold2)}
+  .exp{display:inline-block;margin-left:10px;padding:2px 10px;border-radius:999px;
+       border:1px solid var(--gold);color:var(--gold2);font-size:12px;font-weight:600;vertical-align:3px}
+  footer{padding:36px 0 64px;color:var(--dim);font-size:13px;border-top:1px solid var(--line);text-align:center}
   .lang{position:fixed;top:14px;right:16px;display:flex;gap:6px;z-index:5}
   .lang button{background:var(--panel);color:var(--dim);border:1px solid var(--line);
                border-radius:8px;padding:4px 10px;cursor:pointer;font-size:13px}
@@ -51,65 +53,86 @@
 
 <header class="wrap">
   <svg class="pick" viewBox="0 0 34 42"><path d="M17 1 C6 1 1 8 1 17 C1 29 10 41 17 41 C24 41 33 29 33 17 C33 8 28 1 17 1 Z" fill="#d9a441"/><path d="M17 5 C8.5 5 5 10.5 5 17 C5 27 12.5 37 17 37" stroke="#f0c878" stroke-width="2" fill="none" opacity=".6"/></svg>
-  <h1 data-en="Drop a backing track. Hit Enter. Play." data-ru="Брось минусовку. Нажми Enter. Играй.">Drop a backing track. Hit Enter. Play.</h1>
-  <p class="sub" data-en="JamCrate keeps your backing tracks, tabs and song settings together — ready when you want to play."
-     data-ru="JamCrate хранит минусовки, табы и настройки песен вместе — и готов, когда захочешь поиграть.">
-     JamCrate keeps your backing tracks, tabs and song settings together — ready when you want to play.</p>
-  <span class="mac" data-en="macOS 14+ · Apple Silicon &amp; Intel · free beta" data-ru="macOS 14+ · Apple Silicon и Intel · бесплатная бета">macOS 14+ · Apple Silicon &amp; Intel · free beta</span>
+  <h1 data-en="Everything you need to play a song. In one place."
+      data-ru="Всё, что нужно, чтобы сыграть песню. В одном месте.">Everything you need to play a song. In one place.</h1>
+  <p class="sub" data-en="JamCrate brings your backing tracks, tabs, chord sheets and song notes into one organized library on your Mac."
+     data-ru="JamCrate собирает минусовки, табы, аккордовые листы и заметки о песнях в одну организованную библиотеку на твоём Mac.">JamCrate brings your backing tracks, tabs, chord sheets and song notes into one organized library on your Mac.</p>
+  <p class="rit" data-en="Import them once. Choose a song. Start playing."
+     data-ru="Импортируй один раз. Выбери песню. Начни играть.">Import them once. Choose a song. Start playing.</p>
+  <p><span class="mac" data-en="macOS 14+ · Apple Silicon and Intel · Free beta"
+     data-ru="macOS 14+ · Apple Silicon и Intel · бесплатная бета">macOS 14+ · Apple Silicon and Intel · Free beta</span></p>
+  <a class="cta" href="https://github.com/vitas/jamcrate-beta/releases/latest/download/JamCrate.dmg"
+     data-en="Download JamCrate Beta" data-ru="Скачать JamCrate Beta">Download JamCrate Beta</a>
 </header>
 
 <section class="wrap">
-  <h2 data-en="What it does" data-ru="Что оно умеет">What it does</h2>
-  <p class="lead" data-en="Built around the way hobbyists actually practice." data-ru="Сделано под то, как любители реально тренируются.">Built around the way hobbyists actually practice.</p>
+  <h2 data-en="Built around songs, not files" data-ru="Собрано вокруг песен, а не файлов">Built around songs, not files</h2>
+  <p class="lead" data-en="Backing tracks often end up in Downloads, tabs in another folder, and the right version somewhere in a browser bookmark. JamCrate turns that collection into songs that are ready to play."
+     data-ru="Минусовки обычно живут в «Загрузках», табы — в другой папке, а та самая версия — где-то в закладках браузера. JamCrate превращает этот набор в песни, которые готовы к игре.">Backing tracks often end up in Downloads, tabs in another folder, and the right version somewhere in a browser bookmark. JamCrate turns that collection into songs that are ready to play.</p>
   <div class="grid">
-    <div class="card"><h3 data-en="One-Enter import" data-ru="Импорт за один Enter"><span class="k" data-en="One-Enter import" data-ru="Импорт за один Enter">One-Enter import</span></h3>
-      <p data-en="Drag a pile of mp3s, tabs and PDFs onto the window. Anything unambiguous is added and ready to play; anything doubtful asks exactly one short question."
-         data-ru="Перетащи гору mp3, табов и PDF в окно. Всё однозначное добавляется и сразу играется; спорное задаёт ровно один короткий вопрос.">Drag a pile of mp3s, tabs and PDFs onto the window. Anything unambiguous is added and ready to play; anything doubtful asks exactly one short question.</p></div>
-    <div class="card"><h3 data-en="Tracks + tabs together" data-ru="Минусовки и табы вместе"><span class="k" data-en="Tracks + tabs together" data-ru="Минусовки и табы вместе">Tracks + tabs together</span></h3>
-      <p data-en="Audio and its tab live in one folder and open together. Text, chord sheets and PDFs get fragment-aware autoscroll while you play."
-         data-ru="Звук и таб лежат в одной папке и открываются вместе. Текст, аккордовые листы и PDF сами листаются по текущему фрагменту.">Audio and its tab live in one folder and open together. Text, chord sheets and PDFs get fragment-aware autoscroll while you play.</p></div>
-    <div class="card"><h3 data-en="Solo markers & loops" data-ru="Метки соло и лупы"><span class="k" data-en="Solo markers & loops" data-ru="Метки соло и лупы">Solo markers & loops</span></h3>
-      <p data-en="Mark a solo, loop it, drill it. Drag markers to move them, double-click to delete. Practice the hard eight bars forty times without touching the pedal."
-         data-ru="Отметь соло, зацикли, долби. Метки двигаются перетаскиванием, удаляются двойным кликом. Восемь тяжёлых такт в сороко-й раз — не вставая с места.">Mark a solo, loop it, drill it. Drag markers to move them, double-click to delete. Practice the hard eight bars forty times without touching the pedal.</p></div>
-    <div class="card"><h3 data-en="Your pedal follows the song" data-ru="Процессор следует за песней"><span class="k" data-en="Your pedal follows the song" data-ru="Процессор следует за песней">Your pedal follows the song</span></h3>
-      <p data-en="MIDI preset switching for the M-VAVE Tank and Line 6 Helix: enter a marked fragment, the tone changes. Beta testers get first dibs on new devices."
-         data-ru="MIDI-переключение пресетов для M-VAVE Tank и Line 6 Helix: вход в помеченный фрагмент — и тон меняется. Новые устройства — в первую очередь для беты.">MIDI preset switching for the M-VAVE Tank and Line 6 Helix: enter a marked fragment, the tone changes. Beta testers get first dibs on new devices.</p></div>
-    <div class="card"><h3 data-en="Backups that double-click back" data-ru="Бэкап, который возвращается двойным кликом"><span class="k" data-en="Backups that double-click back" data-ru="Бэкап, который возвращается двойным кликом">Backups that double-click back</span></h3>
-      <p data-en="One .zip carries your whole crate — audio, tabs, markers — verified before it claims success. Move to a new Mac by copying the folder."
-         data-ru="Один .zip несёт весь ящик — звук, табы, метки — и проверяет себя перед тем, как сказать «готово». Переезд на новый Mac — простым копированием папки.">One .zip carries your whole crate — audio, tabs, markers — verified before it claims success. Move to a new Mac by copying the folder.</p></div>
-    <div class="card"><h3 data-en="Everything stays local" data-ru="Всё остаётся локально"><span class="k" data-en="Everything stays local" data-ru="Всё остаётся локально">Everything stays local</span></h3>
-      <p data-en="No account, no analytics, no network calls from your library. If the website disappears tomorrow, your crate keeps working."
-         data-ru="Никаких аккаунтов, аналитики и запросов в сеть из библиотеки. Если этот сайт завтра исчезнет, ящик продолжит работать.">No account, no analytics, no network calls from your library. If the website disappears tomorrow, your crate keeps working.</p></div>
+    <div class="card"><h3 data-en="One song, one folder" data-ru="Одна песня — одна папка">One song, one folder</h3>
+      <p data-en="JamCrate copies the backing track, tab and song data into one managed folder. Your library no longer depends on files scattered across the disk."
+         data-ru="JamCrate собирает минусовку, таб и данные песни в одну папку библиотеки. Твоя коллекция больше не зависит от файлов, разбросанных по диску.">JamCrate copies the backing track, tab and song data into one managed folder. Your library no longer depends on files scattered across the disk.</p></div>
+    <div class="card"><h3 data-en="Track and tab open together" data-ru="Трек и таб открываются вместе">Track and tab open together</h3>
+      <p data-en="Select a song and its audio, PDF, text or chord sheet is there with it. Adjust playback speed without changing pitch and keep the music on screen while you play."
+         data-ru="Выбери песню — её звук, PDF, текст или аккордовый лист уже рядом. Меняй темп без изменения высоты тона и держи музыку перед глазами, пока играешь.">Select a song and its audio, PDF, text or chord sheet is there with it. Adjust playback speed without changing pitch and keep the music on screen while you play.</p></div>
+    <div class="card"><h3 data-en="Mark and repeat any section" data-ru="Отметь и повтори любой фрагмент">Mark and repeat any section</h3>
+      <p data-en="Add In and Out markers around a solo, verse or difficult passage. Play the marked sections in sequence or loop one until it works."
+         data-ru="Поставь метки In и Out вокруг соло, куплета или сложного места. Играй помеченные фрагменты по очереди или зациклю один — пока не пойдёт.">Add In and Out markers around a solo, verse or difficult passage. Play the marked sections in sequence or loop one until it works.</p></div>
+    <div class="card"><h3 data-en="Setlists and favorites" data-ru="Сетлисты и избранное">Setlists and favorites</h3>
+      <p data-en="Keep rehearsal material and performance setlists in playing order. Mark favorites and move through a set without searching for the next file."
+         data-ru="Материал для репетиций и боевых сетлистов — в порядке исполнения. Помечай избранное и проходи сет, не ища следующий файл.">Keep rehearsal material and performance setlists in playing order. Mark favorites and move through a set without searching for the next file.</p></div>
+    <div class="card"><h3 data-en="Import without the filing work" data-ru="Импорт без раскладывания по полочкам">Import without the filing work</h3>
+      <p data-en="Drop in individual files or a whole folder. JamCrate pairs tracks with matching tabs and asks only when something is unclear. Audio can also be imported from a supported video link."
+         data-ru="Перетащи отдельные файлы или целую папку. JamCrate сам сопоставит треки с подходящими табами и спросит только там, где правда непонятно. Звук можно также импортировать по ссылке с поддерживаемого видеохостинга.">Drop in individual files or a whole folder. JamCrate pairs tracks with matching tabs and asks only when something is unclear. Audio can also be imported from a supported video link.</p></div>
+    <div class="card"><h3 data-en="Your library stays yours" data-ru="Библиотека остаётся твоей">Your library stays yours</h3>
+      <p data-en="No account and no cloud storage required. Your music remains on your Mac and can be moved by copying the JamCrate library folder."
+         data-ru="Никаких аккаунтов и облачного хранилища. Музыка остаётся на твоём Mac и переезжает простым копированием папки библиотеки.">No account and no cloud storage required. Your music remains on your Mac and can be moved by copying the JamCrate library folder.</p></div>
+    <div class="card"><h3 data-en="Back up the complete library" data-ru="Резервная копия всей библиотеки">Back up the complete library</h3>
+      <p data-en="Create a single backup containing your tracks, tabs, markers, setlists and rig files. JamCrate verifies the archive before reporting success."
+         data-ru="Один бэкап со всеми треками, табами, метками, сетлистами и файлами ригов. JamCrate проверяет архив, прежде чем сказать «готово».">Create a single backup containing your tracks, tabs, markers, setlists and rig files. JamCrate verifies the archive before reporting success.</p></div>
   </div>
 </section>
 
 <section class="wrap">
-  <h2 data-en="Get the beta" data-ru="Забрать бету">Get the beta</h2>
+  <h2><span data-en="MIDI preset automation" data-ru="Автоматизация MIDI-пресетов">MIDI preset automation</span><span class="exp" data-en="experimental" data-ru="экспериментально">experimental</span></h2>
+  <p data-en="JamCrate can associate MIDI presets with songs and marked sections, allowing compatible processors to change tone during playback."
+     data-ru="JamCrate умеет привязывать MIDI-пресеты к песням и помеченным фрагментам — совместимый процессор меняет тон прямо во время игры.">JamCrate can associate MIDI presets with songs and marked sections, allowing compatible processors to change tone during playback.</p>
+  <p class="lead" style="margin-bottom:0" data-en="Device support varies during the beta. Line 6 Helix-style MIDI program changes are supported; additional devices are being tested."
+     data-ru="Поддержка устройств в бете различается. MIDI program change в духе Line 6 Helix работает; остальные устройства на очереди испытаний.">Device support varies during the beta. Line 6 Helix-style MIDI program changes are supported; additional devices are being tested.</p>
+</section>
+
+<section class="wrap">
+  <h2 data-en="Try the beta" data-ru="Попробуй бету">Try the beta</h2>
   <div class="beta">
-    <p data-en="The beta is the full app, free, and your practice habits shape what ships. During beta the MIDI-pedal layer is the planned paid feature (one-time, around €29); everything else stays free."
-       data-ru="Бета — это полноценное приложение, бесплатно, и именно ваши привычки тренировок решат, что поедет в релиз. В бете платной задумана MIDI-слой педалей (одна покупка, ~€29); остальное остаётся бесплатным.">The beta is the full app, free, and your practice habits shape what ships. During beta the MIDI-pedal layer is the planned paid feature (one-time, around €29); everything else stays free.</p>
+    <p data-en="JamCrate is currently free while the product is being tested with real music libraries."
+       data-ru="JamCrate сейчас бесплатен — продукт проверяется на настоящих музыкальных библиотеках.">JamCrate is currently free while the product is being tested with real music libraries.</p>
+    <p data-en="I am especially interested in feedback from guitarists who already have folders full of backing tracks, tabs and different versions of the same songs. Tell me what worked, what was confusing, and what got in the way of playing."
+       data-ru="Мне особенно интересен отклик гитаристов, у которых уже есть папки, полные минусовок, табов и разных версий одних и тех же песен. Расскажи, что сработало, что сбивало с толку и что мешало просто играть.">I am especially interested in feedback from guitarists who already have folders full of backing tracks, tabs and different versions of the same songs. Tell me what worked, what was confusing, and what got in the way of playing.</p>
     <p style="text-align:center">
       <a class="cta" href="https://github.com/vitas/jamcrate-beta/releases/latest/download/JamCrate.dmg"
-         data-en="Download JamCrate 0.8.0 (.dmg)" data-ru="Скачать JamCrate 0.8.0 (.dmg)">Download JamCrate 0.8.0 (.dmg)</a>
+         data-en="Download JamCrate.dmg" data-ru="Скачать JamCrate.dmg">Download JamCrate.dmg</a>
     </p>
-    <p class="fine" style="text-align:center" data-en="Version 0.8.0 · 4.4 MB · universal (Apple Silicon &amp; Intel) · macOS 14 Sonoma or later — what you have installed is visible in JamCrate ▸ Settings" data-ru="Версия 0.8.0 · 4,4 МБ · универсальная сборка (Apple Silicon и Intel) · macOS 14 Sonoma и новее — какая стоит у тебя, видно в JamCrate ▸ «Настройки»">Version 0.8.0 · 4.4 MB · universal (Apple Silicon &amp; Intel) · macOS 14 Sonoma or later — what you have installed is visible in JamCrate ▸ Settings</p>
-    <h3 data-en="Install (20 seconds)" data-ru="Установка (20 секунд)">Install (20 seconds)</h3>
+    <p class="fine" style="text-align:center" data-en="Approximately 4 MB · Universal build · macOS 14 Sonoma or later"
+       data-ru="Около 4 МБ · универсальная сборка · macOS 14 Sonoma и новее">Approximately 4 MB · Universal build · macOS 14 Sonoma or later</p>
+    <h3 data-en="Installation" data-ru="Установка">Installation</h3>
     <ol class="steps">
-      <li data-en="Open the .dmg and drag JamCrate onto the Applications shortcut."
-          data-ru="Открой .dmg и перетащи JamCrate на значок Applications.">Open the .dmg and drag JamCrate onto the Applications shortcut.</li>
-      <li data-en="Launch it the first time with a right-click → Open (Gatekeeper likes verified developers; this beta is signed ad-hoc). Then it opens normally."
-          data-ru="При первом запуске — правый клик → «Открыть» (Gatekeeper любит верифицированных разработчиков; эта бета подписана ad-hoc). Дальше запускается как обычно.">Launch it the first time with a right-click → Open (Gatekeeper likes verified developers; this beta is signed ad-hoc). Then it opens normally.</li>
-      <li data-en="If macOS still refuses: run <code>xattr -dr com.apple.quarantine /Applications/JamCrate.app</code> once."
-          data-ru="Если macOS всё равно упирается: один раз выполни <code>xattr -dr com.apple.quarantine /Applications/JamCrate.app</code>.">If macOS still refuses: run <code>xattr -dr com.apple.quarantine /Applications/JamCrate.app</code> once.</li>
+      <li data-en="Open the DMG and drag JamCrate to Applications."
+          data-ru="Открой DMG и перетащи JamCrate в Applications.">Open the DMG and drag JamCrate to Applications.</li>
+      <li data-en="The beta is not notarized yet. On the first launch, Control-click JamCrate and choose <strong>Open</strong>."
+          data-ru="Бета ещё не нотризована. При первом запуске нажми Control+клик по JamCrate и выбери <strong>«Открыть»</strong>.">The beta is not notarized yet. On the first launch, Control-click JamCrate and choose <strong>Open</strong>.</li>
+      <li data-en="After the first launch, it opens normally."
+          data-ru="После первого запуска открывается как обычно.">After the first launch, it opens normally.</li>
     </ol>
-    <p data-en="Send feedback, weird folders and bug stories to <a href=\"mailto:beta@jamcrate.app\">beta@jamcrate.app</a> — or just tell me what annoyed you first."
-       data-ru="Фидбек, странные папки и байки про баги — на <a href=\"mailto:beta@jamcrate.app\">beta@jamcrate.app</a>. Или просто расскажи, что разозлило первым.">Send feedback, weird folders and bug stories to <a href="mailto:beta@jamcrate.app">beta@jamcrate.app</a> — or just tell me what annoyed you first.</p>
+    <p data-en="If macOS still blocks the application, run this command once:"
+       data-ru="Если macOS всё равно блокирует приложение, выполни один раз команду:">If macOS still blocks the application, run this command once:</p>
+    <p><code>xattr -dr com.apple.quarantine /Applications/JamCrate.app</code></p>
+    <p>Feedback: <a href="mailto:beta@jamcrate.app">beta@jamcrate.app</a></p>
   </div>
 </section>
 
-<footer class="wrap">
-  <span data-en="JamCrate — made by one guitarist who was tired of hunting files between takes." data-ru="JamCrate — сделано одним гитаристом, который устал искать файлы между дублями.">JamCrate — made by one guitarist who was tired of hunting files between takes.</span>
-</footer>
+<footer class="wrap" data-en="JamCrate is built by a guitarist who got tired of searching for the right files instead of playing."
+        data-ru="JamCrate делает гитарист, который устал искать нужные файлы вместо того, чтобы играть.">JamCrate is built by a guitarist who got tired of searching for the right files instead of playing.</footer>
 
 <script>
 const buttons={EN:bEN,RU:bRU};
