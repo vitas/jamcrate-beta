@@ -52,7 +52,7 @@ Discord-серверы гитарных школ (JTC и т.п.) — спам-п
 
 ## Шаблон-ядро (переконфигурировать под каждый)
 1. Personal hook (mess of files → years under YouTube → built it).
-2. 5 bullets of what works NOW (folder import, GP-as-tab, solo loop at 0.5x no pitch change, setlists, backups).
+2. 6 bullets of what works NOW (folder import, GP-as-tab, solo loop at 0.5x no pitch change, setlists, phone QR streaming + remote, backups).
 3. Two honest not-finished: MIDI auto-switch (do you even want it? what gear?), plain-player export.
 4. macOS 14+, ~5 MB, right-click→Open, free beta, no account.
 5. Question to them (answers shape the roadmap).
