@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Slow down a backing track without changing the pitch (Mac)" data-ru="Как замедлить минусовку без изменения тона (Mac)">Slow down a backing track without changing the pitch (Mac)</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<meta name="description" content="Slowing audio down normally drops the pitch. Here is what time-stretching does instead, how to practise with a 0.5x backing track that stays in the same key, and which Mac tools preserve pitch.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jamcrate.app/slow-down-backing-track-without-pitch-change/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="JamCrate">
+<meta property="og:url" content="https://jamcrate.app/slow-down-backing-track-without-pitch-change/">
+<meta property="og:title" content="Slow down a backing track without changing the pitch">
+<meta property="og:description" content="What time-stretching does, why naive slowdown goes flat, and how to drill a solo at half speed in the original key.">
+<meta property="og:image" content="https://jamcrate.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Why does slowing a track down make it sound flat?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because the simple way to slow audio is to play fewer samples per second. That stretches time and frequency together, so a track at half speed comes out an octave lower. Keeping the pitch means time-stretching instead: the duration changes while the frequencies are left where they were." } },
+    { "@type": "Question", "name": "How slow should I practise a solo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Slow enough that you can play it cleanly and evenly, then raise the tempo by about ten percent at a time. Half speed is a starting point, not a target — the goal is to be able to leave it." } },
+    { "@type": "Question", "name": "Does JamCrate speed tracks up as well as slow them down?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The tempo range is 0.5x to 1.0x: it slows down and never goes above the original speed. If you need faster-than-original playback, use a DAW." } }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../article.css">
+</head>
+<body>
+<div class="lang"><button id="bEN" class="on">EN</button><button id="bRU">RU</button></div>
+
+<header class="top wrap">
+  <p class="crumb"><a href="/">JamCrate</a> › <span data-en="Guides" data-ru="Гайды">Guides</span></p>
+  <h1 data-en="Slow down a backing track without changing the pitch"
+      data-ru="Замедлить минусовку без изменения тона">Slow down a backing track without changing the pitch</h1>
+  <p class="mac">macOS 14+ · <span data-en="free beta" data-ru="бесплатная бета">free beta</span></p>
+</header>
+
+<main class="wrap">
+  <div class="answer">
+    <p data-en="If slowing a track down also makes it sound flat, the player is changing the sample rate instead of time-stretching. You need a tool that separates speed from pitch. On a Mac, JamCrate slows audio from 1.0× down to 0.5× with the pitch preserved, and keeps your markers and tab on screen while it does — but it deliberately does not go above the original speed."
+       data-ru="Если вместе с замедлением трек «плывёт» вниз по тону, плеер меняет частоту дискретизации вместо растяжения времени. Нужен инструмент, который разделяет скорость и высоту. На Mac JamCrate замедляет аудио с 1.0× до 0.5× с сохранением тона и держит маркеры и таб на экране — но выше исходной скорости он сознательно не идёт.">If slowing a track down also makes it sound flat, the player is changing the sample rate instead of time-stretching. You need a tool that separates speed from pitch. On a Mac, JamCrate slows audio from 1.0× down to 0.5× with the pitch preserved, and keeps your markers and tab on screen while it does — but it deliberately does not go above the original speed.</p>
+  </div>
+
+  <h2 data-en="Why slowing down normally goes flat" data-ru="Почему при замедлении тон уезжает вниз">Why slowing down normally goes flat</h2>
+  <p data-en="Digital audio is a stream of samples at a fixed rate — 44100 or 48000 per second. The cheap way to play it slower is to push those samples out at a lower rate: 22050 instead of 44100. Everything stretches, including the frequencies, so the whole track lands an octave lower. That is exactly what a turntable does when you drop the speed, and it is why the old trick of learning a solo at half speed meant learning it in the wrong key."
+     data-ru="Цифровой звук — это поток сэмплов с фиксированной частотой: 44100 или 48000 в секунду. Дешёвый способ сыграть медленнее — отдавать эти сэмплы реже: 22050 вместо 44100. Растягивается всё, включая частоты, и весь трек уезжает на октаву вниз. Именно так ведёт себя вертушка, когда сбрасываешь скорость, и именно поэтому старый приём «учить соло на половинной скорости» означал учить его в другой тональности.">Digital audio is a stream of samples at a fixed rate — 44100 or 48000 per second. The cheap way to play it slower is to push those samples out at a lower rate: 22050 instead of 44100. Everything stretches, including the frequencies, so the whole track lands an octave lower. That is exactly what a turntable does when you drop the speed, and it is why the old trick of learning a solo at half speed meant learning it in the wrong key.</p>
+
+  <h2 data-en="What time-stretching does instead" data-ru="Что вместо этого делает растяжение времени">What time-stretching does instead</h2>
+  <p data-en="Time-stretching analyses the audio in short overlapping windows, works out where the pitched content is, and rebuilds it over a longer duration while leaving the frequencies alone. The result is a track at 70% speed that is still in E. It is not free: the more you stretch, the more the algorithm has to invent, and dense distorted mixes start to sound smeared. Practically, 0.5× is usable, 0.3× is mush, and acoustic material survives better than a wall of guitars."
+     data-ru="Растяжение времени разбирает аудио на короткие перекрывающиеся окна, определяет, где находится тональная составляющая, и собирает её заново на большей длительности, не трогая частоты. На выходе трек на 70% скорости, но по-прежнему в ми. Это не бесплатно: чем сильнее растяжение, тем больше алгоритму приходится додумывать, и плотный перегруженный микс начинает «мазаться». На практике 0.5× ещё работает, 0.3× — каша, а акустика переносит это лучше стены гитар.">Time-stretching analyses the audio in short overlapping windows, works out where the pitched content is, and rebuilds it over a longer duration while leaving the frequencies alone. The result is a track at 70% speed that is still in E. It is not free: the more you stretch, the more the algorithm has to invent, and dense distorted mixes start to sound smeared. Practically, 0.5× is usable, 0.3× is mush, and acoustic material survives better than a wall of guitars.</p>
+
+  <h2 data-en="How to actually use it" data-ru="Как этим пользоваться на самом деле">How to actually use it</h2>
+  <ol>
+    <li data-en="<b>Find your clean tempo.</b> Start slower than you think you need. If you make a mistake, you are still too fast."
+        data-ru="<b>Найди свой чистый темп.</b> Начни медленнее, чем кажется нужным. Если ошибаешься — ты всё ещё играешь слишком быстро."><b>Find your clean tempo.</b> Start slower than you think you need. If you make a mistake, you are still too fast.</li>
+    <li data-en="<b>Loop the hard bars, not the whole solo.</b> Four bars on repeat for five minutes beats the whole solo once. See <a href=&quot;/loop-a-solo-while-practicing/&quot;>looping a solo</a>."
+        data-ru="<b>Зацикли трудные такты, а не всё соло.</b> Четыре такта в цикле на пять минут полезнее, чем всё соло один раз. См. <a href=&quot;/loop-a-solo-while-practicing/&quot;>как зациклить соло</a>."><b>Loop the hard bars, not the whole solo.</b> Four bars on repeat for five minutes beats the whole solo once. See <a href="/loop-a-solo-while-practicing/">looping a solo</a>.</li>
+    <li data-en="<b>Climb in small steps.</b> When it is clean three times in a row, go up about ten percent. Going from 60% straight to 100% teaches you nothing except where you fail."
+        data-ru="<b>Поднимайся мелкими шагами.</b> Когда три раза подряд чисто — добавь примерно десять процентов. Прыжок с 60% сразу на 100% не учит ничему, кроме того, где ты сыплешься."><b>Climb in small steps.</b> When it is clean three times in a row, go up about ten percent. Going from 60% straight to 100% teaches you nothing except where you fail.</li>
+    <li data-en="<b>Finish at full speed.</b> The point of slowing down is to be able to leave it. End every session with a couple of passes at 1.0×."
+        data-ru="<b>Заканчивай на полной скорости.</b> Смысл замедления — суметь из него выйти. Заканчивай каждое занятие парой проходов на 1.0×."><b>Finish at full speed.</b> The point of slowing down is to be able to leave it. End every session with a couple of passes at 1.0×.</li>
+  </ol>
+
+  <h2 data-en="The options on a Mac" data-ru="Варианты на Mac">The options on a Mac</h2>
+  <table>
+    <tr>
+      <th data-en="Tool" data-ru="Инструмент">Tool</th>
+      <th data-en="Slows down" data-ru="Замедляет">Slows down</th>
+      <th data-en="Keeps pitch" data-ru="Сохраняет тон">Keeps pitch</th>
+      <th data-en="Notes" data-ru="Заметки">Notes</th>
+    </tr>
+    <tr>
+      <td><b>JamCrate</b></td>
+      <td data-en="0.5×–1.0×" data-ru="0.5×–1.0×">0.5×–1.0×</td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="markers, loops and tab stay on screen; no speed-up above 1.0×" data-ru="маркеры, лупы и таб остаются на экране; выше 1.0× не разгоняет">markers, loops and tab stay on screen; no speed-up above 1.0×</td>
+    </tr>
+    <tr>
+      <td><b>QuickTime</b></td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="—" data-ru="—">—</td>
+      <td data-en="no markers and no A/B loop; fine for a listen, not for drilling" data-ru="нет маркеров и повтора фрагмента; годится послушать, не для отработки">no markers and no A/B loop; fine for a listen, not for drilling</td>
+    </tr>
+    <tr>
+      <td><b>Audacity</b></td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="yes, with Change Tempo" data-ru="да, через Change Tempo">yes, with Change Tempo</td>
+      <td data-en="Change Tempo preserves pitch, Change Speed does not — easy to pick the wrong one" data-ru="Change Tempo сохраняет тон, Change Speed — нет; легко выбрать не то">Change Tempo preserves pitch, Change Speed does not — easy to pick the wrong one</td>
+    </tr>
+    <tr>
+      <td><b data-en="A DAW" data-ru="DAW">A DAW</b></td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="best quality and most control; also the slowest thing to open" data-ru="лучшее качество и контроль; и самое долгое, что можно открыть">best quality and most control; also the slowest thing to open</td>
+    </tr>
+    <tr>
+      <td><b data-en="Anytune / Moises" data-ru="Anytune / Moises">Anytune / Moises</b></td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="mature practice features on a subscription, per file rather than per library" data-ru="зрелые функции для занятий по подписке, но на файл, а не на библиотеку">mature practice features on a subscription, per file rather than per library</td>
+    </tr>
+  </table>
+
+  <h2 data-en="While you are at it: why some tracks are louder than others" data-ru="Заодно: почему одни треки громче других">While you are at it: why some tracks are louder than others</h2>
+  <p data-en="The other half of practising with a folder of tracks is volume. A mastered commercial backing track and a home-made jam track can sit twelve decibels apart, so every song change is a reach for the volume knob. JamCrate measures each file once when it is imported and stores a gain correction, so tracks arrive at roughly the same perceived level. The correction is limited to about ±12 dB, which means a badly recorded file will not be blasted into distortion just to hit a target."
+     data-ru="Вторая половина занятий с папкой треков — это громкость. Мастерённая коммерческая минусовка и домашний jam-трек могут отличаться на двенадцать децибел, и каждая смена песни — это рывок к регулятору громкости. JamCrate один раз измеряет каждый файл при импорте и запоминает поправку, поэтому треки приходят примерно на одном воспринимаемом уровне. Поправка ограничена примерно ±12 дБ: плохо записанный файл не будет загнан в перегруз ради попадания в цель.">The other half of practising with a folder of tracks is volume. A mastered commercial backing track and a home-made jam track can sit twelve decibels apart, so every song change is a reach for the volume knob. JamCrate measures each file once when it is imported and stores a gain correction, so tracks arrive at roughly the same perceived level. The correction is limited to about ±12 dB, which means a badly recorded file will not be blasted into distortion just to hit a target.</p>
+
+  <div class="box">
+    <h2 data-en="Try it on a track you already own" data-ru="Попробуй на своём треке">Try it on a track you already own</h2>
+    <p data-en="JamCrate is a free beta for macOS 14+. Import a folder, mark the hard bars, take the tempo down to 0.5× and keep the key."
+       data-ru="JamCrate — бесплатная бета для macOS 14+. Импортируй папку, отметь трудные такты, уведи темп к 0.5× и останься в той же тональности.">JamCrate is a free beta for macOS 14+. Import a folder, mark the hard bars, take the tempo down to 0.5× and keep the key.</p>
+    <p>
+      <a class="cta" href="https://github.com/vitas/jamcrate-beta/releases/latest/download/JamCrate.dmg" data-en="Download for Mac" data-ru="Скачать для Mac">Download for Mac</a>
+      <a class="cta secondary" href="https://play.jamcrate.app" data-en="Try the player in your browser" data-ru="Открыть плеер в браузере">Try the player in your browser</a>
+    </p>
+    <p class="fine" data-en="About 6 MB · Universal build · signed and notarized by Apple · no account, nothing leaves your Mac." data-ru="Около 6 МБ · универсальная сборка · подписано и нотаризовано Apple · без аккаунта, ничего не покидает твой Mac.">About 6 MB · Universal build · signed and notarized by Apple · no account, nothing leaves your Mac.</p>
+    <p class="fine" data-en="Prefer Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code>" data-ru="Привык к Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code>">Prefer Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code></p>
+  </div>
+
+  <section class="faq">
+    <h2 data-en="Questions" data-ru="Вопросы">Questions</h2>
+    <h3 data-en="Does slowing down damage my audio file?" data-ru="Замедление портит мой аудиофайл?">Does slowing down damage my audio file?</h3>
+    <p data-en="No. Time-stretching happens during playback; the file on disk is never rewritten. Set the tempo back to 1.0× and the track is untouched."
+       data-ru="Нет. Растяжение происходит во время воспроизведения, файл на диске не перезаписывается. Верни темп к 1.0× — трек не тронут.">No. Time-stretching happens during playback; the file on disk is never rewritten. Set the tempo back to 1.0× and the track is untouched.</p>
+    <h3 data-en="Can I practise with a slowed track on my phone?" data-ru="Можно заниматься с замедленным треком на телефоне?">Can I practise with a slowed track on my phone?</h3>
+    <p data-en="Yes — the set can open on a phone in the same Wi-Fi and the audio streams from the Mac, with the transport and the solo loops on the phone screen."
+       data-ru="Да — сет открывается на телефоне в той же Wi-Fi, звук стримится с Mac, а пульт и лупы соло работают с экрана телефона.">Yes — the set can open on a phone in the same Wi-Fi and the audio streams from the Mac, with the transport and the solo loops on the phone screen.</p>
+    <h3 data-en="Why only down to 0.5×?" data-ru="Почему только до 0.5×?">Why only down to 0.5×?</h3>
+    <p data-en="Below half speed the artefacts get loud enough that you start learning the smearing instead of the notes. If you genuinely need 0.3×, a DAW will do it better."
+       data-ru="Ниже половины артефакты становятся настолько слышны, что ты начинаешь учить «мазню», а не ноты. Если действительно нужен 0.3× — это лучше сделает DAW.">Below half speed the artefacts get loud enough that you start learning the smearing instead of the notes. If you genuinely need 0.3×, a DAW will do it better.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <ul>
+    <li><a href="/" data-en="JamCrate — everything you need to play a song" data-ru="JamCrate — всё, чтобы сыграть песню">JamCrate — everything you need to play a song</a></li>
+    <li><a href="/open-gp5-on-mac/" data-en="Open a Guitar Pro file on a Mac" data-ru="Открыть файл Guitar Pro на Mac">Open a Guitar Pro file on a Mac</a></li>
+    <li><a href="/loop-a-solo-while-practicing/" data-en="How to loop a solo while practising" data-ru="Как зациклить соло во время занятий">How to loop a solo while practising</a></li>
+    <li><a href="/organize-backing-tracks-mac/" data-en="Organize a folder full of backing tracks" data-ru="Разобрать папку с минусовками">Organize a folder full of backing tracks</a></li>
+  </ul>
+  <p data-en="JamCrate is built by a guitarist who got tired of searching for the right files instead of playing. Feedback: <a href=&quot;mailto:beta@jamcrate.app&quot;>beta@jamcrate.app</a>"
+     data-ru="JamCrate делает гитарист, который устал искать нужные файлы вместо того, чтобы играть. Обратная связь: <a href=&quot;mailto:beta@jamcrate.app&quot;>beta@jamcrate.app</a>">JamCrate is built by a guitarist who got tired of searching for the right files instead of playing. Feedback: <a href="mailto:beta@jamcrate.app">beta@jamcrate.app</a></p>
+</footer>
+
+<script src="../lang.js"></script>
+<script src="../site.js" defer></script>
+</body>
+</html>
