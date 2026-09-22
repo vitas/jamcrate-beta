@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="How to loop a solo (or any section) while practising guitar on a Mac" data-ru="Как зациклить соло (или любой фрагмент) на гитаре на Mac">How to loop a solo (or any section) while practising guitar on a Mac</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<meta name="description" content="Loop one solo instead of replaying the whole track: mark In and Out, repeat just that fragment, jump between markers, and slow it to 0.5x with the pitch preserved.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jamcrate.app/loop-a-solo-while-practicing/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="JamCrate">
+<meta property="og:url" content="https://jamcrate.app/loop-a-solo-while-practicing/">
+<meta property="og:title" content="How to loop a solo (or any section) while practising guitar">
+<meta property="og:description" content="Mark In and Out, loop just that fragment, jump between markers, and slow it down without changing pitch.">
+<meta property="og:image" content="https://jamcrate.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I loop a section of a backing track?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mark the start and the end of the section, then repeat only the audio between those two points. In JamCrate, Alt-click on the waveform drops an In/Out marker pair, and clicking the fragment chip loops exactly that piece without replaying the rest of the track." } },
+    { "@type": "Question", "name": "What is the difference between looping a fragment and Frags mode?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Looping repeats one fragment until you stop it. Frags mode plays the marked fragments in order and skips everything between them, which is how you drill three hard bars without hearing the rest of the song." } },
+    { "@type": "Question", "name": "Can I loop a section and slow it down at the same time?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and that is the combination that actually builds speed. Loop the phrase and take it down to 0.5x with the pitch preserved, then raise the tempo as it gets clean." } }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../article.css">
+</head>
+<body>
+<div class="lang"><button id="bEN" class="on">EN</button><button id="bRU">RU</button></div>
+
+<header class="top wrap">
+  <p class="crumb"><a href="/">JamCrate</a> › <span data-en="Guides" data-ru="Гайды">Guides</span></p>
+  <h1 data-en="How to loop a solo while practising guitar — on a Mac"
+      data-ru="Как зациклить соло во время занятий на гитаре — на Mac">How to loop a solo while practising guitar — on a Mac</h1>
+  <p class="mac">macOS 14+ · <span data-en="free beta" data-ru="бесплатная бета">free beta</span></p>
+</header>
+
+<main class="wrap">
+  <div class="answer">
+    <p data-en="You need three things: a marker pair around the section, a loop that respects those markers, and a way to slow it down without changing pitch. In JamCrate you Alt-click the waveform to drop an In/Out pair, click the fragment chip to loop exactly that piece, use ⌥⌘[ and ⌥⌘] to jump between markers, and drag the tempo down to 0.5× while the pitch stays put. The whole loop lives inside the song — nothing is re-imported, nothing is re-encoded."
+       data-ru="Нужны три вещи: пара маркеров вокруг фрагмента, цикл, который эти маркеры уважает, и возможность замедлить без смены тона. В JamCrate: ⌥клик по волне ставит пару In/Out, клик по чипу фрагмента зацикливает ровно этот кусок, ⌥⌘[ и ⌥⌘] переводят между маркерами, а темп тянется вниз до 0.5× с сохранением тона. Цикл живёт внутри песни — ничего не переимпортируется и не перекодируется.">You need three things: a marker pair around the section, a loop that respects those markers, and a way to slow it down without changing pitch. In JamCrate you Alt-click the waveform to drop an In/Out pair, click the fragment chip to loop exactly that piece, use ⌥⌘[ and ⌥⌘] to jump between markers, and drag the tempo down to 0.5× while the pitch stays put. The whole loop lives inside the song — nothing is re-imported, nothing is re-encoded.</p>
+  </div>
+
+  <h2 data-en="Why replaying the whole track does not work" data-ru="Почему переигрывание всего трека не работает">Why replaying the whole track does not work</h2>
+  <p data-en="A three-minute track with a sixteen-bar solo gives you maybe twenty seconds of material to fix. Every time you restart, you spend the first two minutes playing things you can already play, and by the time the hard part arrives your hands are cold and you are watching the counter instead of the phrase. Seeking by hand is worse: you overshoot, you lose the downbeat, and you practise the recovery instead of the bar."
+     data-ru="В трёхминутном треке с шестнадцатитактовым соло полезного материала секунд двадцать. Каждый перезапуск — это две минуты игры того, что ты и так умеешь, и к трудному месту руки уже остыли, а ты смотришь на счётчик вместо фразы. Искать мышкой ещё хуже: промахиваешься, теряешь сильную долю и отрабатываешь попадание, а не такт.">A three-minute track with a sixteen-bar solo gives you maybe twenty seconds of material to fix. Every time you restart, you spend the first two minutes playing things you can already play, and by the time the hard part arrives your hands are cold and you are watching the counter instead of the phrase. Seeking by hand is worse: you overshoot, you lose the downbeat, and you practise the recovery instead of the bar.</p>
+
+  <h2 data-en="The workflow, end to end" data-ru="Рабочий процесс целиком">The workflow, end to end</h2>
+  <ol>
+    <li data-en="<b>Play the track and hit <kbd>M</kbd> where the solo starts.</b> One keystroke at the moment you hear it — no scrubbing back to find the spot."
+        data-ru="<b>Играй трек и нажми <kbd>M</kbd> там, где начинается соло.</b> Одно нажатие в тот момент, когда услышал, — не нужно отматывать назад и искать место."><b>Play the track and hit <kbd>M</kbd> where the solo starts.</b> One keystroke at the moment you hear it — no scrubbing back to find the spot.</li>
+    <li data-en="<b>Alt-click the waveform to drop an In/Out pair</b> around the bars you cannot play yet. You get two flags on the wave; drag either one to move it, double-click it to delete it."
+        data-ru="<b>⌥клик по волне ставит пару In/Out</b> вокруг тактов, которые пока не играются. На волне появятся два флажка: перетащи, чтобы сдвинуть, двойной клик — удалить."><b>Alt-click the waveform to drop an In/Out pair</b> around the bars you cannot play yet. You get two flags on the wave; drag either one to move it, double-click it to delete it.</li>
+    <li data-en="<b>Two nearby markers become a fragment chip.</b> Click the chip to loop just that piece. Nothing outside the markers plays."
+        data-ru="<b>Два близких маркера становятся чипом фрагмента.</b> Клик по чипу зацикливает ровно этот кусок. Всё, что за маркерами, не играет."><b>Two nearby markers become a fragment chip.</b> Click the chip to loop just that piece. Nothing outside the markers plays.</li>
+    <li data-en="<b>Slow it down.</b> Take the tempo to 0.5× — the pitch does not move, so you are still playing the same notes in the same key, just with time to think."
+        data-ru="<b>Замедли.</b> Уведи темп к 0.5× — тон не меняется, ты играешь те же ноты в той же тональности, просто есть время подумать."><b>Slow it down.</b> Take the tempo to 0.5× — the pitch does not move, so you are still playing the same notes in the same key, just with time to think.</li>
+    <li data-en="<b>Walk between the markers.</b> <kbd>⌥⌘[</kbd> and <kbd>⌥⌘]</kbd> jump to the previous and next marker, so you can drill the transition into and out of the solo instead of only the solo itself."
+        data-ru="<b>Ходи между маркерами.</b> <kbd>⌥⌘[</kbd> и <kbd>⌥⌘]</kbd> переводят к предыдущему и следующему маркеру — можно отрабатывать вход в соло и выход из него, а не только само соло."><b>Walk between the markers.</b> <kbd>⌥⌘[</kbd> and <kbd>⌥⌘]</kbd> jump to the previous and next marker, so you can drill the transition into and out of the solo instead of only the solo itself.</li>
+    <li data-en="<b>Raise the tempo when it is clean.</b> The marker stays where it is. Tomorrow you open the song and the section is still marked."
+        data-ru="<b>Поднимай темп, когда стало чисто.</b> Маркер остаётся на месте. Завтра откроешь песню — фрагмент по-прежнему отмечен."><b>Raise the tempo when it is clean.</b> The marker stays where it is. Tomorrow you open the song and the section is still marked.</li>
+  </ol>
+
+  <h2 data-en="Loop one fragment, or skip the gaps" data-ru="Зациклить фрагмент или пропустить промежутки">Loop one fragment, or skip the gaps</h2>
+  <p data-en="These are two different practice modes and it is worth knowing which one you want."
+     data-ru="Это два разных режима занятий, и стоит понимать, какой из них нужен.">These are two different practice modes and it is worth knowing which one you want.</p>
+  <ul>
+    <li data-en="<b>Loop</b> repeats a single fragment until you stop it. Use it for the four bars that will not come out."
+        data-ru="<b>Цикл</b> повторяет один фрагмент, пока не остановишь. Для тех четырёх тактов, которые не выходят."><b>Loop</b> repeats a single fragment until you stop it. Use it for the four bars that will not come out.</li>
+    <li data-en="<b>Frags</b> plays the marked fragments in order and skips everything between them. Use it when the hard parts are scattered: you hear intro, then the two solos, then the outro — and none of the verses you already know."
+        data-ru="<b>Frags</b> играет отмеченные фрагменты по порядку, пропуская всё между ними. Для случая, когда трудные места разбросаны: интро, два соло, концовка — и ни одного куплета, который ты и так знаешь."><b>Frags</b> plays the marked fragments in order and skips everything between them. Use it when the hard parts are scattered: you hear intro, then the two solos, then the outro — and none of the verses you already know.</li>
+  </ul>
+
+  <h2 data-en="Doing it without a dedicated app" data-ru="Как это делается без отдельного приложения">Doing it without a dedicated app</h2>
+  <p data-en="It is possible, and if it works for you there is no reason to install anything."
+     data-ru="Это возможно, и если тебе так удобно — не нужно ничего ставить.">It is possible, and if it works for you there is no reason to install anything.</p>
+  <table>
+    <tr>
+      <th data-en="Tool" data-ru="Инструмент">Tool</th>
+      <th data-en="Section loop" data-ru="Цикл фрагмента">Section loop</th>
+      <th data-en="Catch" data-ru="Подвох">Catch</th>
+    </tr>
+    <tr>
+      <td><b data-en="YouTube" data-ru="YouTube">YouTube</b></td>
+      <td data-en="no" data-ru="нет">no</td>
+      <td data-en="you can repeat the whole video, not bars 33–48. The video is also not on your disk." data-ru="повторить можно всё видео, а не такты 33–48. И видео у тебя не на диске.">you can repeat the whole video, not bars 33–48. The video is also not on your disk.</td>
+    </tr>
+    <tr>
+      <td><b>QuickTime</b></td>
+      <td data-en="no" data-ru="нет">no</td>
+      <td data-en="plays and can run slower, but has no markers and no section repeat." data-ru="играет и умеет медленнее, но маркеров и повтора фрагмента нет.">plays and can run slower, but has no markers and no section repeat.</td>
+    </tr>
+    <tr>
+      <td><b>Audacity</b></td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="select the region and loop-play it — but you are now working in an audio editor, and the markers are not attached to a song." data-ru="выдели область и включи loop play — но ты теперь в аудиоредакторе, и маркеры не привязаны к песне.">select the region and loop-play it — but you are now working in an audio editor, and the markers are not attached to a song.</td>
+    </tr>
+    <tr>
+      <td><b data-en="A DAW (Reaper, Logic)" data-ru="DAW (Reaper, Logic)">A DAW (Reaper, Logic)</b></td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="region looping is excellent, and it is a lot of software to open for four bars." data-ru="цикл по региону отличный, но это тяжёлая программа ради четырёх тактов.">region looping is excellent, and it is a lot of software to open for four bars.</td>
+    </tr>
+  </table>
+
+  <h2 data-en="Loops on your phone as well" data-ru="Циклы ещё и на телефоне">Loops on your phone as well</h2>
+  <p data-en="If you practise away from the Mac, the same marked fragments can run on a phone in the same Wi-Fi: the set opens from a QR code, the audio streams from the Mac, and the solo loops and transport work on the phone screen. Your files are not copied to the phone for that."
+     data-ru="Если занимаешься не за Mac, те же отмеченные фрагменты можно гонять с телефона в той же Wi-Fi: сет открывается по QR, звук стримится с Mac, а лупы соло и пульт работают с экрана телефона. Файлы на телефон при этом не копируются.">If you practise away from the Mac, the same marked fragments can run on a phone in the same Wi-Fi: the set opens from a QR code, the audio streams from the Mac, and the solo loops and transport work on the phone screen. Your files are not copied to the phone for that.</p>
+
+  <div class="box">
+    <h2 data-en="Try it on a track you already own" data-ru="Попробуй на своём треке">Try it on a track you already own</h2>
+    <p data-en="JamCrate is a free beta for macOS 14+. Import a folder of backing tracks, mark a solo, loop it, slow it down."
+       data-ru="JamCrate — бесплатная бета для macOS 14+. Импортируй папку с минусовками, отметь соло, зацикли и замедли.">JamCrate is a free beta for macOS 14+. Import a folder of backing tracks, mark a solo, loop it, slow it down.</p>
+    <p>
+      <a class="cta" href="https://github.com/vitas/jamcrate-beta/releases/download/v0.9.3-beta/JamCrate.dmg" data-en="Download for Mac" data-ru="Скачать для Mac">Download for Mac</a>
+      <a class="cta secondary" href="https://play.jamcrate.app" data-en="Try the player in your browser" data-ru="Открыть плеер в браузере">Try the player in your browser</a>
+    </p>
+    <p class="fine" data-en="About 6 MB · Universal build · signed and notarized by Apple · no account, nothing leaves your Mac." data-ru="Около 6 МБ · универсальная сборка · подписано и нотаризовано Apple · без аккаунта, ничего не покидает твой Mac.">About 6 MB · Universal build · signed and notarized by Apple · no account, nothing leaves your Mac.</p>
+    <p class="fine" data-en="Prefer Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code>" data-ru="Привык к Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code>">Prefer Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code></p>
+  </div>
+
+  <section class="faq">
+    <h2 data-en="Questions" data-ru="Вопросы">Questions</h2>
+    <h3 data-en="How long does it take to mark a solo?" data-ru="Сколько времени занимает отметить соло?">How long does it take to mark a solo?</h3>
+    <p data-en="One pass through the track: press <kbd>M</kbd> when the solo starts, Alt-click the two ends. The markers are saved with the song, so you do it once and never again."
+       data-ru="Один проход по треку: нажать <kbd>M</kbd> на начале соло и ⌥кликом поставить два края. Маркеры сохраняются вместе с песней — делаешь один раз и больше никогда.">One pass through the track: press <kbd>M</kbd> when the solo starts, Alt-click the two ends. The markers are saved with the song, so you do it once and never again.</p>
+    <h3 data-en="Do markers survive a backup or a library move?" data-ru="Переживают ли маркеры бэкап и перенос библиотеки?">Do markers survive a backup or a library move?</h3>
+    <p data-en="Yes. Markers, links, notes, setlists and rigs travel with the song; a backup is one verified .jamcrate.zip, and the whole library folder can be moved to another disk or Mac."
+       data-ru="Да. Маркеры, ссылки, заметки, сет-листы и риги едут вместе с песней; бэкап — это один проверенный .jamcrate.zip, а всю папку библиотеки можно перенести на другой диск или Mac.">Yes. Markers, links, notes, setlists and rigs travel with the song; a backup is one verified .jamcrate.zip, and the whole library folder can be moved to another disk or Mac.</p>
+    <h3 data-en="What if I mark the wrong spot?" data-ru="А если отметил не то место?">What if I mark the wrong spot?</h3>
+    <p data-en="Drag the flag to move it, double-click it to delete it. Nothing is destructive — the audio file is never modified."
+       data-ru="Перетащи флажок, чтобы сдвинуть, двойной клик — чтобы удалить. Ничего не разрушается, аудиофайл не меняется.">Drag the flag to move it, double-click it to delete it. Nothing is destructive — the audio file is never modified.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <ul>
+    <li><a href="/" data-en="JamCrate — everything you need to play a song" data-ru="JamCrate — всё, чтобы сыграть песню">JamCrate — everything you need to play a song</a></li>
+    <li><a href="/open-gp5-on-mac/" data-en="Open a Guitar Pro file on a Mac" data-ru="Открыть файл Guitar Pro на Mac">Open a Guitar Pro file on a Mac</a></li>
+    <li><a href="/slow-down-backing-track-without-pitch-change/" data-en="Slow a backing track down without changing pitch" data-ru="Замедлить минусовку без смены тона">Slow a backing track down without changing pitch</a></li>
+    <li><a href="/organize-backing-tracks-mac/" data-en="Organize a folder full of backing tracks" data-ru="Разобрать папку с минусовками">Organize a folder full of backing tracks</a></li>
+  </ul>
+  <p data-en="JamCrate is built by a guitarist who got tired of searching for the right files instead of playing. Feedback: <a href=&quot;mailto:beta@jamcrate.app&quot;>beta@jamcrate.app</a>"
+     data-ru="JamCrate делает гитарист, который устал искать нужные файлы вместо того, чтобы играть. Обратная связь: <a href=&quot;mailto:beta@jamcrate.app&quot;>beta@jamcrate.app</a>">JamCrate is built by a guitarist who got tired of searching for the right files instead of playing. Feedback: <a href="mailto:beta@jamcrate.app">beta@jamcrate.app</a></p>
+</footer>
+
+<script src="../lang.js"></script>
+<script src="../site.js" defer></script>
+</body>
+</html>
