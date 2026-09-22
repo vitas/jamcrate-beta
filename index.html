@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="JamCrate — everything you need to play a song" data-ru="JamCrate — всё, чтобы сыграть песню" data-de="JamCrate — alles, was du brauchst, um einen Song zu spielen">JamCrate — everything you need to play a song</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="JamCrate brings your backing tracks, tabs, chord sheets and song notes into one organized library on your Mac. macOS 14+, signed and notarized, free beta. Install with Homebrew or the DMG.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jamcrate.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JamCrate">
+<meta property="og:url" content="https://jamcrate.app/">
+<meta property="og:title" content="JamCrate — everything you need to play a song">
+<meta property="og:description" content="Your backing tracks, tabs and solo markers in one library on your Mac. Solo-loop any fragment, slow it down without changing pitch, run whole setlists. Signed and notarized, free beta, macOS 14+.">
+<meta property="og:image" content="https://jamcrate.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JamCrate — everything you need to play a song">
+<meta name="twitter:description" content="Backing tracks, tabs and solo markers in one Mac library. Signed and notarized, free beta, macOS 14+.">
+<meta name="twitter:image" content="https://jamcrate.app/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "JamCrate",
+  "applicationCategory": "MusicApplication",
+  "operatingSystem": "macOS 14 or later",
+  "url": "https://jamcrate.app/",
+  "image": "https://jamcrate.app/og.png",
+  "description": "A local-first practice library for guitarists: backing tracks, tabs and Guitar Pro files with solo markers, fragment looping, tempo control and setlists on one Mac.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+}
+</script>
+<style>
+  :root{
+    --bg:#14161a; --panel:#1c1f25; --line:#2b2f37; --ink:#e8e6e1; --dim:#9aa0ab;
+    --gold:#d9a441; --gold2:#f0c878;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:1040px;margin:0 auto;padding-inline:24px}
+  .topbar{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{color:var(--ink);font-weight:700;text-decoration:none;letter-spacing:-.02em}
+  .navlinks{display:flex;align-items:center;gap:20px}
+  .navlinks>a{color:var(--dim);font-size:14px;text-decoration:none}
+  .navlinks>a:hover{color:var(--ink)}
+  header{padding:64px 24px 40px;text-align:center}
+  .pick{width:34px;height:42px;vertical-align:-8px;margin-right:10px}
+  h1{font-size:clamp(34px,6vw,50px);line-height:1.14;margin:0 0 18px;letter-spacing:-.02em}
+  .hero-sub{color:var(--dim);font-size:clamp(17px,2.4vw,20px);max-width:660px;margin:0 auto 8px}
+  .rit{color:var(--ink);font-weight:600;margin-top:14px}
+  .mac{display:inline-block;margin-top:22px;padding:4px 12px;border:1px solid var(--line);
+       border-radius:999px;color:var(--dim);font-size:13px}
+  a{color:var(--gold2)}
+  .cta{display:inline-block;margin:26px 0 4px;padding:14px 30px;border-radius:12px;
+       background:linear-gradient(180deg,var(--gold2),var(--gold));color:#231c0c;
+       font-weight:700;text-decoration:none;font-size:18px}
+  .cta:hover{filter:brightness(1.06)}
+  .cta.sec{background:none;border:1px solid var(--line);color:var(--ink);font-weight:600;
+           margin-left:8px;font-size:16px;padding:13px 24px}
+  .cta.sec:hover{border-color:var(--gold);color:var(--gold2);filter:none}
+  .fine{color:var(--dim);font-size:13px;margin-top:8px}
+  .notify{margin:24px 0 0;padding:16px 18px;background:var(--bg);border:1px solid var(--line);
+          border-radius:12px;text-align:left}
+  .notify label{display:block;color:var(--dim);font-size:14px;margin:0 0 10px}
+  .notify .row{display:flex;gap:8px;flex-wrap:wrap}
+  .notify input{flex:1 1 220px;min-width:0;background:var(--panel);border:1px solid var(--line);
+             border-radius:9px;padding:10px 12px;color:var(--ink);font-size:15px}
+  .notify button{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#231c0c;border:0;
+              border-radius:9px;padding:10px 18px;font-weight:700;font-size:15px;cursor:pointer}
+  .notify .msg{color:var(--gold2);font-size:14px;margin:10px 0 0}
+  section{padding-block:clamp(48px,7vw,80px);border-top:1px solid var(--line)}
+  h2{font-size:clamp(26px,4vw,34px);line-height:1.2;margin:0 0 10px;letter-spacing:-.02em}
+  .section-head{max-width:650px;margin-bottom:32px}
+  .lead{color:var(--dim);margin:0;max-width:62ch}
+  .showcase{padding-top:0;border-top:0}
+  .media-shell{aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;
+               background:linear-gradient(145deg,#1e2229,#17191e);border:1px solid var(--line);
+               border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,.24)}
+  .media-shell img,.media-shell video{width:100%;height:100%;display:block;object-fit:cover}
+  .media-placeholder{text-align:center;color:var(--dim);padding:24px}
+  .media-placeholder strong{display:block;color:var(--ink);font-size:18px;margin-top:12px}
+  .media-placeholder span:last-child{display:block;font-size:14px;margin-top:4px}
+  .play{width:56px;height:56px;display:grid!important;place-items:center;margin:0 auto!important;
+        border:1px solid #4a3a1d;border-radius:50%;background:#2a2418;color:var(--gold2)!important;
+        font-size:20px;padding-left:3px}
+  .steps-grid,.feature-grid{display:grid;gap:16px}
+  .steps-grid{grid-template-columns:repeat(3,minmax(0,1fr));counter-reset:steps}
+  .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step,.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .step{counter-increment:steps}
+  .step::before{content:"0" counter(steps);display:block;color:var(--gold2);font-size:13px;
+                font-weight:700;letter-spacing:.08em;margin-bottom:14px}
+  .step h3,.card h3{margin:0 0 7px;font-size:17px;line-height:1.3}
+  .step p,.card p{margin:0;color:var(--dim);font-size:15px;line-height:1.55}
+  .trust{padding-block:20px;background:var(--panel)}
+  .trust-list{display:flex;justify-content:center;gap:10px 28px;flex-wrap:wrap;
+              margin:0 auto;padding-inline:24px;list-style:none;color:var(--dim);font-size:14px}
+  .trust-list li::before{content:"✓";color:var(--gold2);margin-right:8px}
+  .future{padding-block:28px}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:0 20px}
+  summary{cursor:pointer;color:var(--ink);font-weight:600;padding:16px 28px 16px 0}
+  details>div{padding:0 0 18px;color:var(--dim);font-size:15px}
+  details p{margin:0 0 10px}
+  .beta{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:32px;
+        background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px}
+  .beta h2{margin-top:0}
+  .beta .cta{margin-top:12px}
+  .install{align-self:start;background:var(--bg)}
+  ol.steps{padding-left:22px;color:var(--dim)}
+  ol.steps b,ol.steps strong{color:var(--ink)}
+  code{background:var(--bg);border:1px solid var(--line);border-radius:6px;
+       padding:2px 7px;font-size:.92em;color:var(--gold2)}
+  /* A command the reader will copy. It wraps visually so the whole thing stays
+     readable in the narrow column, but the text node holds no newline — so
+     selecting and copying it still yields one valid command, not two. */
+  pre.cmd{background:var(--bg);border:1px solid var(--line);border-radius:8px;
+          padding:11px 14px;margin:10px 0;overflow-x:auto}
+  pre.cmd code{background:none;border:0;padding:0;font-size:13.5px;
+               white-space:pre-wrap;overflow-wrap:anywhere;color:var(--gold2)}
+  .way{margin:16px 0 0;color:var(--ink);font-weight:600}
+  .way:first-child{margin-top:0}
+  .resources{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .resources h2{font-size:22px}
+  .resource-list{margin:0;padding:0;list-style:none;color:var(--dim)}
+  .resource-list li{margin:0 0 12px;font-size:15px}
+  .resource-list b{display:block;color:var(--ink);font-size:15px}
+  footer{padding:36px 24px 64px;color:var(--dim);font-size:13px;border-top:1px solid var(--line);text-align:center}
+  .lang{display:flex;gap:6px}
+  .lang button{background:var(--panel);color:var(--dim);border:1px solid var(--line);
+               border-radius:8px;padding:4px 10px;cursor:pointer;font-size:13px}
+  .lang button.on{color:#231c0c;background:var(--gold);border-color:var(--gold)}
+  :focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+  /* Honeypot: reachable by a form-filling bot, never by a human. */
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  @media(max-width:720px){
+    .navlinks>a{display:none}
+    header{padding-top:44px}
+    .cta.sec{display:block;width:max-content;margin:10px auto 0}
+    .steps-grid,.feature-grid,.beta,.resources{grid-template-columns:1fr}
+    .beta{padding:24px}
+    .media-shell{border-radius:14px}
+  }
+</style>
+</head>
+<body>
+<nav class="topbar wrap" aria-label="Primary">
+  <a class="brand" href="#">JamCrate</a>
+  <div class="navlinks">
+    <a href="#how" data-en="How it works" data-ru="Как работает" data-de="So funktioniert’s">How it works</a>
+    <a href="#features" data-en="What it does" data-ru="Что умеет" data-de="Was es kann">What it does</a>
+    <a href="#beta" data-en="Get the beta" data-ru="Скачать бету" data-de="Beta holen">Get the beta</a>
+    <div class="lang"><button id="bEN" class="on">EN</button><button id="bRU">RU</button><button id="bDE">DE</button></div>
+  </div>
+</nav>
+
+<header class="wrap">
+  <svg class="pick" viewBox="0 0 34 42"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd98a"/><stop offset=".55" stop-color="#e0a83c"/><stop offset="1" stop-color="#8f5d18"/></linearGradient></defs><path d="M17 0.5 C22.5 6 28 9 30.5 15 C33 21 27.5 33 17 41.5 C6.5 33 1 21 3.5 15 C6 9 11.5 6 17 0.5 Z" fill="url(#g)" transform="rotate(10 17 21)"/><path d="M5.5,21.0 L5.8,21.0 L6.1,21.0 L6.4,21.0 L6.7,21.0 L6.9,21.0 L7.2,21.0 L7.5,21.0 L7.8,21.0 L8.1,21.0 L8.4,21.0 L8.7,21.0 L9.0,21.0 L9.2,21.0 L9.5,21.0 L9.8,21.0 L10.1,21.0 L10.4,21.0 L10.7,21.0 L11.0,21.0 L11.2,21.0 L11.5,21.0 L11.8,21.0 L12.1,21.0 L12.4,21.0 L12.7,21.0 L13.0,21.0 L13.3,21.0 L13.5,21.0 L13.8,21.0 L14.1,21.0 L14.4,21.0 L14.7,12.6 L15.0,13.0 L15.3,13.6 L15.6,14.4 L15.8,15.4 L16.1,16.5 L16.4,17.7 L16.7,18.9 L17.0,20.2 L17.3,21.4 L17.6,22.5 L17.9,23.5 L18.2,24.3 L18.4,25.1 L18.7,25.6 L19.0,26.0 L19.3,26.1 L19.6,26.1 L19.9,26.0 L20.2,25.7 L20.4,25.2 L20.7,24.7 L21.0,24.0 L21.3,23.3 L21.6,22.6 L21.9,21.8 L22.2,21.1 L22.5,20.4 L22.8,19.7 L23.0,19.2 L23.3,18.7 L23.6,18.3 L23.9,18.1 L24.2,17.9 L24.5,17.9 L24.8,17.9 L25.0,18.1 L25.3,18.3 L25.6,18.6 L25.9,19.0 L26.2,19.4 L26.5,19.9 L26.8,20.3 L27.1,20.8 L27.4,21.2 L27.6,21.6 L27.9,22.0 L28.2,22.3 L28.5,22.5" fill="none" stroke="#201605" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".92" transform="rotate(10 17 21)"/></svg>
+  <h1 data-en="Everything you need to play a song. In one place."
+      data-ru="Всё, что нужно, чтобы сыграть песню. В одном месте." data-de="Alles, was du brauchst, um einen Song zu spielen. An einem Ort.">Everything you need to play a song. In one place.</h1>
+  <p class="hero-sub" data-en="JamCrate brings your backing tracks, tabs, chord sheets and song notes into one organized library on your Mac."
+     data-ru="JamCrate собирает минусовки, табы, аккордовые листы и заметки о песнях в одну организованную библиотеку на твоём Mac." data-de="JamCrate sammelt deine Backing Tracks, Tabs, Akkordblätter und Songnotizen in einer organisierten Bibliothek auf deinem Mac.">JamCrate brings your backing tracks, tabs, chord sheets and song notes into one organized library on your Mac.</p>
+  <p class="rit" data-en="Import them once. Choose a song. Start playing."
+     data-ru="Импортируй один раз. Выбери песню. Начни играть." data-de="Einmal importieren. Song wählen. Losspielen.">Import them once. Choose a song. Start playing.</p>
+  <p><span class="mac" data-en="macOS 14+ · Apple Silicon and Intel · Free beta"
+     data-ru="macOS 14+ · Apple Silicon и Intel · бесплатная бета" data-de="macOS 14+ · Apple Silicon und Intel · kostenlose Beta">macOS 14+ · Apple Silicon and Intel · Free beta</span></p>
+  <p>
+    <a class="cta" href="https://github.com/vitas/jamcrate-beta/releases/download/v0.9.4-beta/JamCrate.dmg"
+       data-en="Download JamCrate Beta" data-ru="Скачать JamCrate Beta" data-de="JamCrate Beta laden">Download JamCrate Beta</a>
+    <a class="cta sec" href="https://play.jamcrate.app/?lang=en"
+       data-en="Phone player — with a demo set" data-ru="Плеер для телефона — с демо-сетом" data-de="Handy-Player — mit Demo-Set">Phone player — with a demo set</a>
+  </p>
+  <p class="fine" data-en="About 20 MB · Universal build · Signed and notarized by Apple · macOS 14 Sonoma or later"
+     data-ru="Около 20 МБ · универсальная сборка · подписано и нотаризовано Apple · macOS 14 Sonoma и новее" data-de="Etwa 20 MB · Universal-Build · von Apple signiert und notarisiert · macOS 14 Sonoma oder neuer">About 20 MB · Universal build · Signed and notarized by Apple · macOS 14 Sonoma or later</p>
+  <p class="fine" data-en="Prefer a package manager? <code>brew install --cask vitas/jamcrate/jamcrate</code>"
+     data-ru="Привык к пакетному менеджеру? <code>brew install --cask vitas/jamcrate/jamcrate</code>" data-de="Lieber ein Paketmanager? <code>brew install --cask vitas/jamcrate/jamcrate</code>">Prefer a package manager? <code>brew install --cask vitas/jamcrate/jamcrate</code></p>
+  <p class="fine" data-en="Nothing to install for the browser player — it opens with a demo set: two tracks by Kevin MacLeod (incompetech.com), used under <a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot;>Creative Commons BY 4.0</a>."
+     data-ru="Для плеера в браузере ничего ставить не нужно — он открывается с демо-набором: два трека Kevin MacLeod (incompetech.com) под лицензией <a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot;>Creative Commons BY 4.0</a>." data-de="Für den Browser-Player brauchst du nichts zu installieren — er öffnet sich mit einem Demo-Set: zwei Tracks von Kevin MacLeod (incompetech.com), genutzt unter <a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot;>Creative Commons BY 4.0</a>.">Nothing to install for the browser player — it opens with a demo set: two tracks by Kevin MacLeod (incompetech.com), used under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0</a>.</p>
+</header>
+
+<section class="showcase wrap" aria-label="Product preview" hidden>
+  <div class="media-shell">
+    <!-- When media is ready: remove `hidden` from this section and replace the
+         placeholder with either an <img> (screenshot or animated GIF/WebP) or
+         a <video controls playsinline preload="metadata" poster="…">. -->
+    <div class="media-placeholder">
+      <span class="play" aria-hidden="true">▶</span>
+      <strong data-en="30-second walkthrough" data-ru="Обзор за 30 секунд" data-de="30-Sekunden-Rundgang">30-second walkthrough</strong>
+      <span data-en="Screenshot, GIF or video will appear here" data-ru="Здесь появится скриншот, GIF или видео" data-de="Screenshot, GIF oder Video erscheint hier">Screenshot, GIF or video will appear here</span>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="how">
+  <div class="section-head">
+    <h2 data-en="From scattered files to playing in three steps" data-ru="От разбросанных файлов до игры — три шага" data-de="Von verstreuten Dateien zum Spielen in drei Schritten">From scattered files to playing in three steps</h2>
+    <p class="lead" data-en="JamCrate is deliberately simple: organize once, then open a song and play."
+       data-ru="JamCrate специально сделан простым: один раз наведи порядок, потом открывай песню и играй." data-de="JamCrate ist bewusst einfach: einmal ordnen, dann Song öffnen und spielen.">JamCrate is deliberately simple: organize once, then open a song and play.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step"><h3 data-en="Drop in a folder" data-ru="Перетащи папку" data-de="Ordner reinziehen">Drop in a folder</h3>
+      <p data-en="Import tracks and tabs together. JamCrate pairs what it can and asks only when something is unclear."
+         data-ru="Импортируй минусовки и табы вместе. JamCrate сам сопоставит их и спросит только там, где непонятно." data-de="Importiere Tracks und Tabs zusammen. JamCrate verknüpft, was sich zuordnet, und fragt nur, wenn etwas unklar ist.">Import tracks and tabs together. JamCrate pairs what it can and asks only when something is unclear.</p></div>
+    <div class="step"><h3 data-en="Choose a song" data-ru="Выбери песню" data-de="Song wählen">Choose a song</h3>
+      <p data-en="The backing track, tab, notes and useful links are already together in one place."
+         data-ru="Минусовка, таб, заметки и нужные ссылки уже собраны в одном месте." data-de="Backing Track, Tab, Notizen und nützliche Links liegen schon gesammelt an einem Ort.">The backing track, tab, notes and useful links are already together in one place.</p></div>
+    <div class="step"><h3 data-en="Start playing" data-ru="Начни играть" data-de="Losspielen">Start playing</h3>
+      <p data-en="Play the track, loop a difficult fragment or move through a setlist without hunting for files."
+         data-ru="Включай трек, зацикли сложный фрагмент или проходи сет-лист, не разыскивая файлы." data-de="Spiel den Track, loop ein schwieriges Fragment oder arbeite eine Setlist durch, ohne Dateien zu suchen.">Play the track, loop a difficult fragment or move through a setlist without hunting for files.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="features">
+  <div class="section-head">
+    <h2 data-en="Only what helps you play" data-ru="Только то, что помогает играть" data-de="Nur was beim Spielen hilft">Only what helps you play</h2>
+    <p class="lead" data-en="Not a tab editor and not a studio. A practical player for guitarists who already have their own material."
+       data-ru="Не редактор табов и не студия. Практичный плеер для гитаристов, у которых уже есть свой материал." data-de="Kein Tab-Editor und kein Studio. Ein praktischer Player für Gitarristen, die ihr Material schon haben.">Not a tab editor and not a studio. A practical player for guitarists who already have their own material.</p>
+  </div>
+  <div class="feature-grid">
+    <div class="card"><h3 data-en="Tab as a quick reference" data-ru="Таб как памятка" data-de="Tab als Spickzettel">Tab as a quick reference</h3>
+      <p data-en="Open PDF, text, chord sheets or Guitar Pro 3–5 files to refresh the part before playing. Tabs are not synced to notes or bars; optional auto-scroll moves through them proportionally with the track."
+         data-ru="Открой PDF, текст, аккорды или Guitar Pro 3–5, чтобы вспомнить партию перед игрой. Табы не синхронизируются по нотам или тактам; при желании можно включить простую пропорциональную прокрутку вместе с треком." data-de="Öffne PDF, Text, Akkordblätter oder Guitar-Pro-3–5-Dateien, um die Partie vor dem Spiel aufzufrischen. Tabs werden nicht nach Noten oder Takten synchronisiert; optional scrollen sie proportional zum Track mit.">Open PDF, text, chord sheets or Guitar Pro 3–5 files to refresh the part before playing. Tabs are not synced to notes or bars; optional auto-scroll moves through them proportionally with the track.</p></div>
+    <div class="card"><h3 data-en="Practice the difficult part" data-ru="Разбери сложное место" data-de="Schwierige Stelle üben">Practice the difficult part</h3>
+      <p data-en="Mark a solo or verse, loop it and slow it down to 0.5× without changing the pitch."
+         data-ru="Отметь соло или куплет, зацикли его и замедли до 0,5× без изменения тональности." data-de="Markiere ein Solo oder Verse, loope es und werde bis auf 0,5× langsamer — ohne die Tonart zu ändern.">Mark a solo or verse, loop it and slow it down to 0.5× without changing the pitch.</p></div>
+    <div class="card"><h3 data-en="Open the set on your phone" data-ru="Открой сет на телефоне" data-de="Öffne das Set auf deinem Handy">Open the set on your phone</h3>
+      <p data-en="Scan a QR code on the same Wi-Fi. Play loops on the phone or use it as a remote while the music stays on your Mac."
+         data-ru="Отсканируй QR-код в той же Wi-Fi. Запускай лупы на телефоне или используй его как пульт — музыка остаётся на Mac." data-de="QR-Code im selben WLAN scannen. Loops auf dem Handy spielen oder es als Fernbedienung nutzen — die Musik bleibt auf dem Mac.">Scan a QR code on the same Wi-Fi. Play loops on the phone or use it as a remote while the music stays on your Mac.</p></div>
+    <div class="card"><h3 data-en="A library, not another pile" data-ru="Библиотека, а не новая свалка" data-de="Eine Bibliothek, nicht noch ein Haufen">A library, not another pile</h3>
+      <p data-en="Keep setlists, favorites, notes and links with each song. Back up the complete library as one archive."
+         data-ru="Храни сет-листы, избранное, заметки и ссылки рядом с песней. Делай резервную копию всей библиотеки одним архивом." data-de="Setlists, Favoriten, Notizen und Links bleiben bei jedem Song. Sichere die ganze Bibliothek als ein Archiv.">Keep setlists, favorites, notes and links with each song. Back up the complete library as one archive.</p></div>
+  </div>
+</section>
+
+<aside class="trust">
+  <ul class="trust-list wrap">
+    <li data-en="No account" data-ru="Без аккаунта" data-de="Kein Konto">No account</li>
+    <li data-en="No cloud required" data-ru="Облако не требуется" data-de="Keine Cloud nötig">No cloud required</li>
+    <li data-en="Your files stay yours" data-ru="Твои файлы остаются твоими" data-de="Deine Dateien bleiben deine">Your files stay yours</li>
+    <li data-en="Apple Silicon and Intel" data-ru="Apple Silicon и Intel" data-de="Apple Silicon und Intel">Apple Silicon and Intel</li>
+  </ul>
+</aside>
+
+<section class="future wrap">
+  <details>
+    <summary data-en="What may come next: MIDI and plain-player export" data-ru="Что может появиться дальше: MIDI и экспорт в обычный плеер" data-de="Was als Nächstes kommen kann: MIDI und Export in normale Player">What may come next: MIDI and plain-player export</summary>
+    <div>
+      <p data-en="MIDI preset switching is only an idea until players confirm they need it. No device support is promised yet."
+         data-ru="Переключение MIDI-пресетов пока только идея — сначала игроки должны подтвердить, что оно им нужно. Поддержка конкретных устройств ещё не обещана." data-de="MIDI-Preset-Wechsel ist erst mal nur eine Idee — solange niemand bestätigt hat, dass er sie braucht. Unterstützung für konkrete Geräte wird noch nicht versprochen.">MIDI preset switching is only an idea until players confirm they need it. No device support is promised yet.</p>
+      <p><span data-en="Also being considered: exporting a set as numbered tracks, separate solo loops and M3U playlists for any ordinary player. Tell me what matters at"
+               data-ru="Ещё одна идея: экспортировать сет как пронумерованные треки, отдельные лупы соло и M3U-плейлисты для любого обычного плеера. Расскажи, что важно, на" data-de="Außerdem angedacht: ein Set als nummerierte Tracks, einzelne Solo-Loops und M3U-Playlists für jeden normalen Player exportieren. Sag mir, was wichtig ist, an:">Also being considered: exporting a set as numbered tracks, separate solo loops and M3U playlists for any ordinary player. Tell me what matters at</span> <a href="mailto:beta@jamcrate.app">beta@jamcrate.app</a>.</p>
+    </div>
+  </details>
+</section>
+
+<section class="wrap" id="beta">
+  <div class="beta">
+    <div>
+      <h2 data-en="Try it with your own library" data-ru="Попробуй на своей библиотеке" data-de="Teste es mit deiner eigenen Bibliothek">Try it with your own library</h2>
+      <p class="lead" data-en="JamCrate is free during beta. It is made for guitarists who already have folders of backing tracks, tabs and several versions of the same songs."
+         data-ru="Во время беты JamCrate бесплатен. Он сделан для гитаристов, у которых уже есть папки с минусовками, табами и несколькими версиями одних и тех же песен." data-de="JamCrate ist in der Beta kostenlos. Gemacht für Gitarristen, die Ordner voller Backing Tracks, Tabs und mehrere Versionen derselben Songs schon haben.">JamCrate is free during beta. It is made for guitarists who already have folders of backing tracks, tabs and several versions of the same songs.</p>
+      <a class="cta" href="https://github.com/vitas/jamcrate-beta/releases/download/v0.9.4-beta/JamCrate.dmg"
+         data-en="Download JamCrate.dmg" data-ru="Скачать JamCrate.dmg" data-de="JamCrate.dmg laden">Download JamCrate.dmg</a>
+      <p class="fine" data-en="About 20 MB · Universal build · Signed and notarized by Apple · macOS 14 Sonoma or later"
+         data-ru="Около 20 МБ · универсальная сборка · подписано и нотаризовано Apple · macOS 14 Sonoma и новее" data-de="Etwa 20 MB · Universal-Build · von Apple signiert und notarisiert · macOS 14 Sonoma oder neuer">About 20 MB · Universal build · Signed and notarized by Apple · macOS 14 Sonoma or later</p>
+      <form class="notify" id="sub" data-endpoint="https://notify.jamcrate.app/">
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label for="sub-email" data-en="One email when 1.0 or a Pro version ships — no newsletter."
+               data-ru="Одно письмо, когда выйдет 1.0 или Pro-версия — без рассылок." data-de="Eine Mail, wenn 1.0 oder eine Pro-Version erscheint — kein Newsletter.">One email when 1.0 or a Pro version ships — no newsletter.</label>
+        <div class="row">
+          <input id="sub-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+          <button type="submit" data-en="Notify me" data-ru="Сообщить мне" data-de="Benachrichtigen">Notify me</button>
+        </div>
+        <p class="msg" id="sub-msg" hidden></p>
+      </form>
+    </div>
+    <details class="install">
+      <summary data-en="Install" data-ru="Установка" data-de="Installation">Install</summary>
+      <div>
+        <p class="fine" data-en="Signed and notarized by Apple, so JamCrate opens with an ordinary double-click. No right-click, no System Settings detour, no Terminal."
+           data-ru="Подписано и нотаризовано Apple, поэтому JamCrate открывается обычным двойным кликом. Без правого клика, без похода в Системные настройки, без Терминала."
+           data-de="Von Apple signiert und notarisiert — JamCrate öffnet mit einem normalen Doppelklick. Kein Rechtsklick, kein Umweg über die Systemeinstellungen, kein Terminal.">Signed and notarized by Apple, so JamCrate opens with an ordinary double-click. No right-click, no System Settings detour, no Terminal.</p>
+
+        <p class="way" data-en="With Homebrew" data-ru="Через Homebrew" data-de="Mit Homebrew">With Homebrew</p>
+        <pre class="cmd"><code>brew install --cask vitas/jamcrate/jamcrate</code></pre>
+        <p class="fine" data-en="Installs to Applications and updates later with <code>brew upgrade --cask jamcrate</code>. No tap needed — the full path works as-is."
+           data-ru="Ставит в Applications, обновляется потом через <code>brew upgrade --cask jamcrate</code>. Tap не нужен — полный путь работает как есть."
+           data-de="Installiert nach »Programme«, späteres Update mit <code>brew upgrade --cask jamcrate</code>. Kein Tap nötig — der volle Pfad funktioniert direkt.">Installs to Applications and updates later with <code>brew upgrade --cask jamcrate</code>. No tap needed — the full path works as-is.</p>
+
+        <p class="way" data-en="Or download the DMG" data-ru="Или скачать DMG" data-de="Oder das DMG laden">Or download the DMG</p>
+        <ol class="steps">
+          <li data-en="Open the DMG and drag JamCrate to Applications."
+              data-ru="Открой DMG и перетащи JamCrate в Applications." data-de="DMG öffnen und JamCrate in »Programme« ziehen.">Open the DMG and drag JamCrate to Applications.</li>
+          <li data-en="Open it. That is the whole install — macOS has already verified the signature."
+              data-ru="Открой его. Это вся установка — подпись macOS уже проверила." data-de="Öffnen. Das ist die ganze Installation — macOS hat die Signatur bereits geprüft.">Open it. That is the whole install — macOS has already verified the signature.</li>
+        </ol>
+        <p class="fine" data-en="Coming from an earlier beta that macOS blocked? The old build needed the two-step “Open Anyway” dance. This one does not."
+           data-ru="Ставил более раннюю бету, которую macOS блокировал? Старая сборка требовала двух шагов через «Всё равно открыть». Эта — нет."
+           data-de="Kommst du von einer älteren Beta, die macOS blockiert hat? Der alte Build brauchte den Umweg über »Trotzdem öffnen«. Dieser nicht.">Coming from an earlier beta that macOS blocked? The old build needed the two-step “Open Anyway” dance. This one does not.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="resources wrap">
+  <div>
+    <h2 data-en="Practical guides" data-ru="Практические гайды" data-de="Praktische Guides">Practical guides</h2>
+    <ul class="resource-list">
+      <li><a href="/open-gp5-on-mac/" data-en="View .gp5 / .gp4 / .gp3 as a quick reference on Mac" data-ru="Посмотреть .gp5 / .gp4 / .gp3 как памятку на Mac" data-de=".gp5 / .gp4 / .gp3 als Spickzettel auf dem Mac ansehen">View .gp5 / .gp4 / .gp3 as a quick reference on Mac</a></li>
+      <li><a href="/loop-a-solo-while-practicing/" data-en="Loop a solo while practising" data-ru="Зациклить соло во время занятий" data-de="Ein Solo beim Üben loopen">Loop a solo while practising</a></li>
+      <li><a href="/slow-down-backing-track-without-pitch-change/" data-en="Slow a backing track without changing pitch" data-ru="Замедлить минусовку без изменения тона" data-de="Backing Track langsamer machen, ohne die Tonart zu ändern">Slow a backing track without changing pitch</a></li>
+      <li><a href="/organize-backing-tracks-mac/" data-en="Organize a folder of backing tracks" data-ru="Разобрать папку с минусовками" data-de="Einen Ordner mit Backing Tracks aufräumen">Organize a folder of backing tracks</a></li>
+    </ul>
+  </div>
+  <div>
+    <h2 data-en="Questions and feedback" data-ru="Вопросы и обратная связь" data-de="Fragen und Feedback">Questions and feedback</h2>
+    <ul class="resource-list">
+      <li><b data-en="Telegram" data-ru="Telegram" data-de="Telegram">Telegram</b><a href="https://t.me/jamcrate">t.me/jamcrate</a></li>
+      <li><b>GitHub Discussions</b><a href="https://github.com/vitas/jamcrate-beta/discussions">jamcrate-beta/discussions</a></li>
+      <li><b data-en="Email" data-ru="Почта" data-de="E-Mail">Email</b><a href="mailto:beta@jamcrate.app">beta@jamcrate.app</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="wrap" data-en="JamCrate is built by a guitarist who got tired of searching for the right files instead of playing."
+        data-ru="JamCrate делает гитарист, который устал искать нужные файлы вместо того, чтобы играть." data-de="JamCrate baut ein Gitarrist, der das Suchen nach den richtigen Dateien satt hatte, statt zu spielen.">JamCrate is built by a guitarist who got tired of searching for the right files instead of playing.</footer>
+
+<script>
+const buttons={EN:bEN,RU:bRU,DE:bDE};
+function setLang(l){
+  document.documentElement.lang = l==='RU' ? 'ru' : l==='DE' ? 'de' : 'en';
+  for(const [k,b] of Object.entries(buttons)) b.classList.toggle('on',k===l);
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    const v = el.getAttribute('data-'+l.toLowerCase());
+    if(v!=null) el.innerHTML=v;
+  });
+  localStorage.setItem('jamcrate-lang',l);
+  document.querySelectorAll('a[href*="play.jamcrate.app"]').forEach(a=>a.href='https://play.jamcrate.app/?lang='+l.toLowerCase());
+}
+bEN.onclick=()=>setLang('EN'); bRU.onclick=()=>setLang('RU'); bDE.onclick=()=>setLang('DE');
+const want = localStorage.getItem('jamcrate-lang') || (/^ru/.test(navigator.language) ? 'RU' : /^de/.test(navigator.language) ? 'DE' : 'EN');
+if(want!=='EN') setLang(want);
+
+// "Notify me" form. The endpoint is the Resend proxy in infra/notify-worker —
+// put its URL in data-endpoint on #sub to start collecting addresses. While it
+// is empty the button is not dead: it opens a prefilled email instead, and a
+// failed POST falls back to the same email so the address is never lost.
+const sub=document.getElementById('sub');
+if(sub){
+  const mailtoFallback=email=>{
+    location.href='mailto:beta@jamcrate.app?subject='+encodeURIComponent('JamCrate: notify me')+
+                  '&body='+encodeURIComponent(email);
+  };
+  sub.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const field=document.getElementById('sub-email');
+    const email=field.value.trim();
+    const msg=document.getElementById('sub-msg');
+    if(!email) return;
+    const ru=document.documentElement.lang==='ru';
+    if(!sub.dataset.endpoint){ mailtoFallback(email); return; }
+    const honeypot=sub.querySelector('.hp');
+    try{
+      const res=await fetch(sub.dataset.endpoint,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email,company:honeypot?honeypot.value:''})});
+      if(!res.ok) throw new Error('http '+res.status);
+      msg.textContent=ru?'Готово — напишу, когда будет что сказать.':'Done — I will write when there is something to say.';
+      field.value='';
+    }catch(err){
+      // Never lose the address: hand it to the mail client instead.
+      mailtoFallback(email);
+      msg.textContent=ru?'Не получилось отправить. Открыл письмо — отправь его, и я добавлю тебя вручную.'
+                       :'Sending failed. I opened an email instead — send it and I will add you by hand.';
+    }
+    msg.hidden=false;
+  });
+}
+</script>
+<script src="site.js" defer></script>
+</body>
+</html>
