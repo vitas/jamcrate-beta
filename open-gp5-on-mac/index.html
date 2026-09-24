@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Open a .gp5 / .gp4 / .gp3 Guitar Pro file on a Mac — without Guitar Pro" data-ru="Как открыть файл Guitar Pro (.gp5, .gp4, .gp3) на Mac — без Guitar Pro">Open a .gp5 / .gp4 / .gp3 Guitar Pro file on a Mac — without Guitar Pro</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<meta name="description" content="A .gp5 file has no built-in reader on macOS. Three honest ways to open Guitar Pro 3–5 files on a Mac: Guitar Pro itself, a free tab editor with playback, or JamCrate, which renders the tab next to your backing track.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jamcrate.app/open-gp5-on-mac/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="JamCrate">
+<meta property="og:url" content="https://jamcrate.app/open-gp5-on-mac/">
+<meta property="og:title" content="Open a Guitar Pro 3–5 file on a Mac without Guitar Pro">
+<meta property="og:description" content="What a .gp5 file is, which free tools open it, and how to read the tab next to the backing track you are practising.">
+<meta property="og:image" content="https://jamcrate.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Can macOS open a .gp5 file by itself?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Guitar Pro files are a binary format owned by Arobas Music, and macOS ships no reader or preview for them. Finder shows a generic document icon, Quick Look does not render the tab, and Preview refuses the file." } },
+    { "@type": "Question", "name": "What is the difference between .gp3, .gp4, .gp5 and .gpx?",
+      "acceptedAnswer": { "@type": "Answer", "text": ".gp3, .gp4 and .gp5 are the Guitar Pro 3, 4 and 5 formats. .gpx is Guitar Pro 6 and .gp is Guitar Pro 7/8; both are a different, newer container. A reader for 3–5 does not read .gpx, and a modern Guitar Pro opens all of them." } },
+    { "@type": "Question", "name": "Does JamCrate play Guitar Pro files?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, and it never will — playing the tab back is out of scope. JamCrate renders Guitar Pro 3–5 files as readable tab in the same window as your audio, so you can look at the tab while the backing track plays." } }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../article.css">
+</head>
+<body>
+<div class="lang"><button id="bEN" class="on">EN</button><button id="bRU">RU</button></div>
+
+<header class="top wrap">
+  <p class="crumb"><a href="/">JamCrate</a> › <span data-en="Guides" data-ru="Гайды">Guides</span></p>
+  <h1 data-en="How to open a Guitar Pro file on a Mac — without buying Guitar Pro"
+      data-ru="Как открыть файл Guitar Pro на Mac — не покупая Guitar Pro">How to open a Guitar Pro file on a Mac — without buying Guitar Pro</h1>
+  <p class="mac">macOS 14+ · <span data-en="free beta" data-ru="бесплатная бета">free beta</span></p>
+</header>
+
+<main class="wrap">
+  <div class="answer">
+    <p data-en="A .gp5 file is a binary Guitar Pro document, and macOS has no built-in reader for it: Finder shows a generic icon, Quick Look does not render the tab, Preview refuses it. You have three honest options — Guitar Pro itself (paid, plays the file back), a free tab editor such as TuxGuitar or MuseScore (also plays it back, but is a separate program), or JamCrate (free, renders Guitar Pro 3–5 as real tab in the same window as your backing track, but does not play the file)."
+       data-ru="Файл .gp5 — это бинарный документ Guitar Pro, и в macOS нет встроенного средства его открыть: Finder покажет обычную иконку, Quick Look таб не отрисует, Preview файл не примет. Честных вариантов три: сам Guitar Pro (платный, умеет проигрывать), бесплатный редактор вроде TuxGuitar или MuseScore (тоже проигрывает, но это отдельная программа), либо JamCrate (бесплатный, показывает Guitar Pro 3–5 настоящей табулатурой в одном окне с минусовкой, но файл не проигрывает).">A .gp5 file is a binary Guitar Pro document, and macOS has no built-in reader for it: Finder shows a generic icon, Quick Look does not render the tab, Preview refuses it. You have three honest options — Guitar Pro itself (paid, plays the file back), a free tab editor such as TuxGuitar or MuseScore (also plays it back, but is a separate program), or JamCrate (free, renders Guitar Pro 3–5 as real tab in the same window as your backing track, but does not play the file).</p>
+  </div>
+
+  <h2 data-en="What a .gp5 file actually is" data-ru="Что на самом деле представляет собой файл .gp5">What a .gp5 file actually is</h2>
+  <p data-en="Guitar Pro 3, 4 and 5 (extensions .gp3, .gp4, .gp5) store a whole score in a compact binary format: tracks, tunings, bars, beats, notes, frets, techniques, lyrics and tempo changes. It is not XML and not plain text, which is why no generic tool can guess its way through it. Guitar Pro 6 and 7+ moved to a different container (.gpx and .gp), so a reader written for 3–5 will not open those, and a modern Guitar Pro opens everything."
+     data-ru="Guitar Pro 3, 4 и 5 (расширения .gp3, .gp4, .gp5) хранят партитуру целиком в компактном бинарном формате: дорожки, строи, такты, доли, ноты, лады, приёмы, текст и смены темпа. Это не XML и не текст, поэтому универсальный инструмент его «на глаз» не разберёт. В Guitar Pro 6 и 7+ контейнер другой (.gpx и .gp), так что читатель для 3–5 их не откроет, а современный Guitar Pro открывает всё.">Guitar Pro 3, 4 and 5 (extensions .gp3, .gp4, .gp5) store a whole score in a compact binary format: tracks, tunings, bars, beats, notes, frets, techniques, lyrics and tempo changes. It is not XML and not plain text, which is why no generic tool can guess its way through it. Guitar Pro 6 and 7+ moved to a different container (.gpx and .gp), so a reader written for 3–5 will not open those, and a modern Guitar Pro opens everything.</p>
+
+  <h2 data-en="The three options, compared honestly" data-ru="Три варианта — честное сравнение">The three options, compared honestly</h2>
+  <table>
+    <tr>
+      <th data-en="Tool" data-ru="Инструмент">Tool</th>
+      <th data-en="Opens 3–5" data-ru="Открывает 3–5">Opens 3–5</th>
+      <th data-en="Plays the tab" data-ru="Проигрывает таб">Plays the tab</th>
+      <th data-en="Best when" data-ru="Когда лучше">Best when</th>
+    </tr>
+    <tr>
+      <td><b>Guitar Pro</b></td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="you edit, write or need exact playback and sound." data-ru="ты редактируешь, пишешь или нужен точный звук и воспроизведение.">you edit, write or need exact playback and sound.</td>
+    </tr>
+    <tr>
+      <td><b>TuxGuitar / MuseScore</b></td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="yes" data-ru="да">yes</td>
+      <td data-en="you want free playback and do not mind a second application." data-ru="нужно бесплатное воспроизведение и не смущает вторая программа.">you want free playback and do not mind a second application.</td>
+    </tr>
+    <tr>
+      <td><b>JamCrate</b></td>
+      <td data-en="yes (.gp3/.gp4/.gp5)" data-ru="да (.gp3/.gp4/.gp5)">yes (.gp3/.gp4/.gp5)</td>
+      <td data-en="no" data-ru="нет">no</td>
+      <td data-en="you want to read the tab while the backing track plays." data-ru="нужно читать таб, пока играет минусовка.">you want to read the tab while the backing track plays.</td>
+    </tr>
+  </table>
+
+  <h2 data-en="If you want to read the tab while you practise" data-ru="Если ты хочешь читать таб во время игры">If you want to read the tab while you practise</h2>
+  <p data-en="Most people who search for a .gp5 reader are not trying to edit the file. They are trying to learn the song: the tab is open in one window, the backing track in another, and they are alt-tabbing between them. That is the case JamCrate is built for. Drop the Guitar Pro file and the audio into the same song and the tab renders inside the app, fitted to the window, right next to the player."
+     data-ru="Большинство тех, кто ищет чем открыть .gp5, не собираются файл редактировать. Они учат песню: таб в одном окне, минусовка в другом, и они переключаются между ними. Ровно для этого сделан JamCrate. Положи файл Guitar Pro и аудио в одну песню — таб отрисуется внутри приложения, по ширине окна, рядом с плеером.">Most people who search for a .gp5 reader are not trying to edit the file. They are trying to learn the song: the tab is open in one window, the backing track in another, and they are alt-tabbing between them. That is the case JamCrate is built for. Drop the Guitar Pro file and the audio into the same song and the tab renders inside the app, fitted to the window, right next to the player.</p>
+  <ul>
+    <li data-en="<b>Real tab, not a picture.</b> The file is parsed and drawn as a monospaced grid: strings as lines (high string on top), frets on the beat, bar lines, four bars per row. Title, artist and tempo sit on top."
+        data-ru="<b>Настоящая табулатура, а не картинка.</b> Файл разбирается и рисуется моноширинной сеткой: строки — струны (высокая сверху), лады по долям, тактовые черты, по четыре такта в ряд. Сверху название, исполнитель и темп."><b>Real tab, not a picture.</b> The file is parsed and drawn as a monospaced grid: strings as lines (high string on top), frets on the beat, bar lines, four bars per row. Title, artist and tempo sit on top.</li>
+    <li data-en="<b>One track at a time.</b> A picker in the sheet header switches between guitar, bass and the rest. Showing every track at once made real arrangements unreadable, so it shows the one you choose. Drum tracks are marked and not drawn as tab."
+        data-ru="<b>По одной дорожке.</b> Переключатель в шапке листа выбирает гитару, бас и остальные. Показ всех дорожек сразу делал реальные аранжировки нечитаемыми, поэтому показывается выбранная. Ударные помечаются и табулатурой не рисуются."><b>One track at a time.</b> A picker in the sheet header switches between guitar, bass and the rest. Showing every track at once made real arrangements unreadable, so it shows the one you choose. Drum tracks are marked and not drawn as tab.</li>
+    <li data-en="<b>Windows text handled.</b> Old tab files store Cyrillic and Western text in legacy encodings, not UTF-8. JamCrate detects the encoding and shows the title and lyrics correctly instead of a row of question marks."
+        data-ru="<b>Кодировки учтены.</b> Старые файлы хранят кириллицу и западный текст в легаси-кодировках, а не в UTF-8. JamCrate определяет кодировку и показывает название и текст нормально, а не строкой вопросительных знаков."><b>Windows text handled.</b> Old tab files store Cyrillic and Western text in legacy encodings, not UTF-8. JamCrate detects the encoding and shows the title and lyrics correctly instead of a row of question marks.</li>
+    <li data-en="<b>Tested on a real collection.</b> The reader was checked against 1037 Guitar Pro files collected over the years; 1036 parse and render. The one miss is a Guitar Pro 2 file wearing a .gp3 extension, which gets an honest “open in Guitar Pro” card instead of a wrong rendering."
+        data-ru="<b>Проверено на живой коллекции.</b> Читатель прогнали по 1037 файлам Guitar Pro, собранным за годы; 1036 разбираются и рисуются. Единственный промах — файл Guitar Pro 2 с расширением .gp3: вместо неверной отрисовки показывается честная карточка «открыть в Guitar Pro»."><b>Tested on a real collection.</b> The reader was checked against 1037 Guitar Pro files collected over the years; 1036 parse and render. The one miss is a Guitar Pro 2 file wearing a .gp3 extension, which gets an honest “open in Guitar Pro” card instead of a wrong rendering.</li>
+  </ul>
+
+  <h2 data-en="What JamCrate does not do" data-ru="Чего JamCrate не делает">What JamCrate does not do</h2>
+  <ul>
+    <li data-en="It does not play the tab back. Playback of Guitar Pro files is out of scope permanently — if you need to hear the score, use Guitar Pro, TuxGuitar or MuseScore."
+        data-ru="Не проигрывает таб. Воспроизведение файлов Guitar Pro вне задач проекта навсегда — если нужно услышать партитуру, используй Guitar Pro, TuxGuitar или MuseScore.">It does not play the tab back. Playback of Guitar Pro files is out of scope permanently — if you need to hear the score, use Guitar Pro, TuxGuitar or MuseScore.</li>
+    <li data-en="It does not open .gpx or .gp6+ files, and it does not open damaged ones. Both get a card that hands the file to Guitar Pro."
+        data-ru="Не открывает .gpx и .gp6+, а также повреждённые файлы. В обоих случаях показывается карточка, которая передаёт файл в Guitar Pro.">It does not open .gpx or .gp6+ files, and it does not open damaged ones. Both get a card that hands the file to Guitar Pro.</li>
+    <li data-en="It does not edit or write Guitar Pro files. It is a reader."
+        data-ru="Не редактирует и не пишет файлы Guitar Pro. Это читатель.">It does not edit or write Guitar Pro files. It is a reader.</li>
+  </ul>
+
+  <div class="box">
+    <h2 data-en="Try it on your own files" data-ru="Попробуй на своих файлах">Try it on your own files</h2>
+    <p data-en="JamCrate is a free beta for macOS 14+. Import a folder of backing tracks and tabs, and the Guitar Pro files pair with the audio automatically."
+       data-ru="JamCrate — бесплатная бета для macOS 14+. Импортируй папку с минусовками и табами, файлы Guitar Pro склеятся с аудио сами.">JamCrate is a free beta for macOS 14+. Import a folder of backing tracks and tabs, and the Guitar Pro files pair with the audio automatically.</p>
+    <p>
+      <a class="cta" href="https://github.com/vitas/jamcrate-beta/releases/download/v0.9.11-beta/JamCrate.dmg" data-en="Download for Mac" data-ru="Скачать для Mac">Download for Mac</a>
+      <a class="cta secondary" href="https://play.jamcrate.app" data-en="Try the player in your browser" data-ru="Открыть плеер в браузере">Try the player in your browser</a>
+    </p>
+    <p class="fine" data-en="About 20 MB · Universal build · signed and notarized by Apple · no account, nothing leaves your Mac." data-ru="Около 20 МБ · универсальная сборка · подписано и нотаризовано Apple · без аккаунта, ничего не покидает твой Mac.">About 20 MB · Universal build · signed and notarized by Apple · no account, nothing leaves your Mac.</p>
+    <p class="fine" data-en="Prefer Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code>" data-ru="Привык к Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code>">Prefer Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code></p>
+  </div>
+
+  <section class="faq">
+    <h2 data-en="Questions" data-ru="Вопросы">Questions</h2>
+    <h3 data-en="Why will Quick Look not preview my .gp5?" data-ru="Почему Quick Look не показывает мой .gp5?">Why will Quick Look not preview my .gp5?</h3>
+    <p data-en="Quick Look only previews formats macOS knows. Guitar Pro is a proprietary binary format, so there is no system preview and no Finder thumbnail — the file needs an application that parses it."
+       data-ru="Quick Look показывает только те форматы, которые знает macOS. Guitar Pro — проприетарный бинарный формат, поэтому системного превью и значка в Finder нет: файл должна разобрать программа.">Quick Look only previews formats macOS knows. Guitar Pro is a proprietary binary format, so there is no system preview and no Finder thumbnail — the file needs an application that parses it.</p>
+    <h3 data-en="I have a .gpx file. Will this work?" data-ru="У меня файл .gpx. Это сработает?">I have a .gpx file. Will this work?</h3>
+    <p data-en="No. .gpx is Guitar Pro 6, a different container from .gp3/.gp4/.gp5. Open it in a current Guitar Pro, or export it from there to .gp5 first."
+       data-ru="Нет. .gpx — это Guitar Pro 6, другой контейнер, не .gp3/.gp4/.gp5. Открой его в актуальном Guitar Pro или сначала экспортируй оттуда в .gp5.">No. .gpx is Guitar Pro 6, a different container from .gp3/.gp4/.gp5. Open it in a current Guitar Pro, or export it from there to .gp5 first.</p>
+    <h3 data-en="Can I slow the backing track down while reading the tab?" data-ru="Можно замедлить минусовку, пока читаю таб?">Can I slow the backing track down while reading the tab?</h3>
+    <p data-en="Yes — see <a href=&quot;/slow-down-backing-track-without-pitch-change/&quot;>slowing a backing track down without changing pitch</a>. JamCrate slows audio to 0.5× and keeps the pitch, with the tab still on screen."
+       data-ru="Да — см. <a href=&quot;/slow-down-backing-track-without-pitch-change/&quot;>как замедлить минусовку без смены тона</a>. JamCrate замедляет аудио до 0.5× с сохранением тона, таб остаётся на экране.">Yes — see <a href="/slow-down-backing-track-without-pitch-change/">slowing a backing track down without changing pitch</a>. JamCrate slows audio to 0.5× and keeps the pitch, with the tab still on screen.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <ul>
+    <li><a href="/" data-en="JamCrate — everything you need to play a song" data-ru="JamCrate — всё, чтобы сыграть песню">JamCrate — everything you need to play a song</a></li>
+    <li><a href="/loop-a-solo-while-practicing/" data-en="How to loop a solo while practising" data-ru="Как зациклить соло во время занятий">How to loop a solo while practising</a></li>
+    <li><a href="/organize-backing-tracks-mac/" data-en="Organize a folder full of backing tracks" data-ru="Разобрать папку с минусовками">Organize a folder full of backing tracks</a></li>
+    <li><a href="/slow-down-backing-track-without-pitch-change/" data-en="Slow a backing track down without changing pitch" data-ru="Замедлить минусовку без смены тона">Slow a backing track down without changing pitch</a></li>
+    <li><a href="/amazing-slow-downer-alternative-mac/" data-en="Amazing Slow Downer alternative for Mac" data-ru="Замена Amazing Slow Downer на Mac">Amazing Slow Downer alternative for Mac</a></li>
+    <li><a href="/transcribe-alternative-mac/" data-en="Transcribe! alternative for Mac" data-ru="Замена Transcribe! на Mac">Transcribe! alternative for Mac</a></li>
+    <li><a href="/anytune-alternative-mac/" data-en="Anytune alternative for Mac" data-ru="Замена Anytune на Mac">Anytune alternative for Mac</a></li>
+    <li><a href="/capo-alternative-mac/" data-en="Capo alternative for Mac" data-ru="Замена Capo на Mac">Capo alternative for Mac</a></li>
+    <li><a href="/moises-alternative-offline/" data-en="An offline Moises alternative" data-ru="Офлайн-замена Moises">An offline Moises alternative</a></li>
+  </ul>
+  <p data-en="JamCrate is built by a guitarist who got tired of searching for the right files instead of playing. Feedback: <a href=&quot;mailto:beta@jamcrate.app&quot;>beta@jamcrate.app</a>"
+       data-ru="JamCrate делает гитарист, который устал искать нужные файлы вместо того, чтобы играть. Обратная связь: <a href=&quot;mailto:beta@jamcrate.app&quot;>beta@jamcrate.app</a>">JamCrate is built by a guitarist who got tired of searching for the right files instead of playing. Feedback: <a href="mailto:beta@jamcrate.app">beta@jamcrate.app</a></p>
+</footer>
+
+<script src="../lang.js"></script>
+<script src="../site.js" defer></script>
+</body>
+</html>

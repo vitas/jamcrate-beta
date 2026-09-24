@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="How to organize a folder full of backing tracks on a Mac" data-ru="Как разобрать папку с минусовками на Mac">How to organize a folder full of backing tracks on a Mac</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<meta name="description" content="One song, one folder, with the audio, the tab and the notes together — plus an index you can search. Four rules that end the Downloads-folder mess for good.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jamcrate.app/organize-backing-tracks-mac/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="JamCrate">
+<meta property="og:url" content="https://jamcrate.app/organize-backing-tracks-mac/">
+<meta property="og:title" content="How to organize a folder full of backing tracks on a Mac">
+<meta property="og:description" content="Four rules that turn a pile of files into a library you can actually play from — and why renaming files is not organization.">
+<meta property="og:image" content="https://jamcrate.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the best way to organize backing tracks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "One song per folder, with the audio, the tab and the notes inside that folder, and an index on top so you can search and build setlists. Grouping by file type — all audio in one place, all tabs in another — is what makes a collection unusable." } },
+    { "@type": "Question", "name": "Should I rename my files with artist and title?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Consistent names help, but a naming convention alone is not a library: you cannot search it for the song where the solo starts at 1:42, and you cannot reorder it into a setlist without touching the files." } },
+    { "@type": "Question", "name": "How do I back up a backing track library?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Keep the library in one self-contained folder and back up that folder as a single archive, rather than syncing individual files. JamCrate writes the whole library — tracks, tabs, markers, setlists and rigs — into one timestamped .jamcrate.zip and verifies it before reporting success." } }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../article.css">
+</head>
+<body>
+<div class="lang"><button id="bEN" class="on">EN</button><button id="bRU">RU</button></div>
+
+<header class="top wrap">
+  <p class="crumb"><a href="/">JamCrate</a> › <span data-en="Guides" data-ru="Гайды">Guides</span></p>
+  <h1 data-en="How to organize a folder full of backing tracks"
+      data-ru="Как разобрать папку, полную минусовок">How to organize a folder full of backing tracks</h1>
+  <p class="mac">macOS 14+ · <span data-en="free beta" data-ru="бесплатная бета">free beta</span></p>
+</header>
+
+<main class="wrap">
+  <div class="answer">
+    <p data-en="One song, one folder. The backing track, the tab and the notes about the song live inside that folder, and an index sits on top so you can search the collection and reorder it into setlists. That is the whole idea. Grouping by file type — all audio in one folder, all tabs in another — is the thing that makes a collection unusable, because playing one song means touching three places."
+       data-ru="Одна песня — одна папка. Минусовка, таб и заметки о песне лежат внутри этой папки, а сверху — индекс, по которому коллекция ищется и перестраивается в сет-листы. Это вся идея. Группировка по типу файлов — всё аудио в одну папку, все табы в другую — и есть то, что делает коллекцию нерабочей: чтобы сыграть одну песню, приходится лезть в три места.">One song, one folder. The backing track, the tab and the notes about the song live inside that folder, and an index sits on top so you can search the collection and reorder it into setlists. That is the whole idea. Grouping by file type — all audio in one folder, all tabs in another — is the thing that makes a collection unusable, because playing one song means touching three places.</p>
+  </div>
+
+  <h2 data-en="Why the mess happens" data-ru="Откуда берётся бардак">Why the mess happens</h2>
+  <p data-en="It is never laziness. Backing tracks arrive from everywhere: a purchase here, a download there, a rip from a video, a file a bandmate sent. Each one lands wherever that app defaults to, gets whatever name the source gave it, and is filed by nothing. After two years you have a Downloads folder with <code>yt-dlp-2019.mp3</code> next to <code>backing_final_v2_REAL.mp3</code>, a separate folder of PDFs, and a browser bookmark for the version you actually liked. The songs are all there. You just cannot start playing."
+     data-ru="Это никогда не лень. Минусовки приходят отовсюду: одна куплена, другая скачана, третья вытащена из видео, четвёртую прислал товарищ. Каждая попадает туда, куда по умолчанию пишет своё приложение, получает имя от источника и не попадает ни в какую систему. Через два года в «Загрузках» лежит <code>yt-dlp-2019.mp3</code> рядом с <code>backing_final_v2_REAL.mp3</code>, отдельная папка с PDF и закладка в браузере на ту версию, которая реально нравилась. Песни все на месте. Начать играть нельзя.">It is never laziness. Backing tracks arrive from everywhere: a purchase here, a download there, a rip from a video, a file a bandmate sent. Each one lands wherever that app defaults to, gets whatever name the source gave it, and is filed by nothing. After two years you have a Downloads folder with <code>yt-dlp-2019.mp3</code> next to <code>backing_final_v2_REAL.mp3</code>, a separate folder of PDFs, and a browser bookmark for the version you actually liked. The songs are all there. You just cannot start playing.</p>
+
+  <h2 data-en="Four rules that actually fix it" data-ru="Четыре правила, которые действительно чинят это">Four rules that actually fix it</h2>
+  <ol>
+    <li data-en="<b>One song, one folder.</b> Everything about that song goes in. Different versions are different folders or clearly marked files inside it, never loose copies in three places."
+        data-ru="<b>Одна песня — одна папка.</b> Внутрь идёт всё, что о песне. Разные версии — это разные папки или явно помеченные файлы внутри, а не копии в трёх местах."><b>One song, one folder.</b> Everything about that song goes in. Different versions are different folders or clearly marked files inside it, never loose copies in three places.</li>
+    <li data-en="<b>Keep the tab with the audio.</b> The moment the sheet lives somewhere else, you stop opening it. Audio, PDF, Guitar Pro file and lyrics belong side by side."
+        data-ru="<b>Таб — рядом с аудио.</b> Как только лист живёт в другом месте, ты перестаёшь его открывать. Аудио, PDF, файл Guitar Pro и текст должны лежать рядом."><b>Keep the tab with the audio.</b> The moment the sheet lives somewhere else, you stop opening it. Audio, PDF, Guitar Pro file and lyrics belong side by side.</li>
+    <li data-en="<b>Record where the hard part is.</b> The one piece of information a folder cannot hold is that the solo starts at 1:42 and the last four bars are the problem. Write it down once, where the song is."
+        data-ru="<b>Запиши, где трудное место.</b> Единственное, что папка хранить не умеет, — что соло начинается на 1:42 и проблема в последних четырёх тактах. Запиши это один раз там, где лежит песня."><b>Record where the hard part is.</b> The one piece of information a folder cannot hold is that the solo starts at 1:42 and the last four bars are the problem. Write it down once, where the song is.</li>
+    <li data-en="<b>Put an index on top, not inside the files.</b> Search, favourites, setlists and practice history should be a layer over the folder — so reorganising never means renaming files."
+        data-ru="<b>Индекс — сверху, а не внутри файлов.</b> Поиск, избранное, сет-листы и история занятий должны быть слоем поверх папки, чтобы перестройка никогда не означала переименование файлов."><b>Put an index on top, not inside the files.</b> Search, favourites, setlists and practice history should be a layer over the folder — so reorganising never means renaming files.</li>
+  </ol>
+
+  <h2 data-en="About naming conventions" data-ru="Про соглашения об именах">About naming conventions</h2>
+  <p data-en="A consistent name such as <code>Artist - Title (version).ext</code> is worth having, but understand what it buys you: it makes files sort predictably and survive a move. It does not give you a library. You cannot search a filename convention for the song you were working on last week, you cannot reorder it into a setlist without touching every file, and the moment two people name things differently the convention collapses. Names are for humans reading a folder; the index is for everything else."
+     data-ru="Последовательное имя вида <code>Artist - Title (version).ext</code> иметь стоит, но надо понимать, что оно даёт: файлы предсказуемо сортируются и переживают перенос. Библиотеки оно не даёт. По соглашению имён не поищешь песню, над которой работал на прошлой неделе, не перестроишь порядок в сет-лист без правки каждого файла, а как только два человека называют по-разному — соглашение рассыпается. Имена — для человека, который смотрит в папку; индекс — для всего остального.">A consistent name such as <code>Artist - Title (version).ext</code> is worth having, but understand what it buys you: it makes files sort predictably and survive a move. It does not give you a library. You cannot search a filename convention for the song you were working on last week, you cannot reorder it into a setlist without touching every file, and the moment two people name things differently the convention collapses. Names are for humans reading a folder; the index is for everything else.</p>
+
+  <h2 data-en="How JamCrate does it" data-ru="Как это устроено в JamCrate">How JamCrate does it</h2>
+  <ul>
+    <li data-en="<b>Drop a whole folder, not one file at a time.</b> Point it at the mess you already have. It pairs each backing track with the matching tab by name — ignoring noise words like <code>backing</code>, <code>minus</code>, <code>final</code> — and asks only when the pairing is genuinely unclear."
+        data-ru="<b>Кидай папку целиком, а не по файлу.</b> Укажи на тот бардак, который уже есть. Приложение склеивает каждую минусовку с подходящим табом по имени — игнорируя шумовые слова вроде <code>backing</code>, <code>minus</code>, <code>final</code> — и спрашивает только там, где склейка действительно неоднозначна."><b>Drop a whole folder, not one file at a time.</b> Point it at the mess you already have. It pairs each backing track with the matching tab by name — ignoring noise words like <code>backing</code>, <code>minus</code>, <code>final</code> — and asks only when the pairing is genuinely unclear.</li>
+    <li data-en="<b>It copies files into a managed library</b> at <code>~/Music/JamCrate</code>, one folder per artist and song. Your originals are not moved or modified, and the library does not depend on files scattered across the disk."
+        data-ru="<b>Файлы копируются в управляемую библиотеку</b> в <code>~/Music/JamCrate</code>, по папке на исполнителя и песню. Оригиналы не переносятся и не меняются, а библиотека не зависит от файлов, разбросанных по диску."><b>It copies files into a managed library</b> at <code>~/Music/JamCrate</code>, one folder per artist and song. Your originals are not moved or modified, and the library does not depend on files scattered across the disk.</li>
+    <li data-en="<b>The whole folder is the library.</b> Move it to another disk, a USB stick or a Mac: <kbd>⌘,</kbd> points JamCrate at the new location and everything — songs, markers, setlists, rigs — comes with it."
+        data-ru="<b>Папка целиком и есть библиотека.</b> Перенеси её на другой диск, флешку или Mac: <kbd>⌘,</kbd> указывает JamCrate на новое место, и всё — песни, маркеры, сет-листы, риги — едет вместе с ней."><b>The whole folder is the library.</b> Move it to another disk, a USB stick or a Mac: <kbd>⌘,</kbd> points JamCrate at the new location and everything — songs, markers, setlists, rigs — comes with it.</li>
+    <li data-en="<b>Markers, links and notes ride with the song.</b> The YouTube original you learned from, a lyrics page, a capo reminder, and the In/Out markers around the solo are stored next to the song, not in a separate notes app."
+        data-ru="<b>Маркеры, ссылки и заметки едут вместе с песней.</b> Оригинал с YouTube, с которого учил, страница текста, напоминание про капо и маркеры In/Out вокруг соло хранятся рядом с песней, а не в отдельном приложении для заметок."><b>Markers, links and notes ride with the song.</b> The YouTube original you learned from, a lyrics page, a capo reminder, and the In/Out markers around the solo are stored next to the song, not in a separate notes app.</li>
+    <li data-en="<b>Setlists are a view, not a copy.</b> Put songs in playing order for a rehearsal or a gig without duplicating a single audio file."
+        data-ru="<b>Сет-лист — это представление, а не копия.</b> Расставь песни в порядок для репетиции или концерта, не дублируя ни одного аудиофайла."><b>Setlists are a view, not a copy.</b> Put songs in playing order for a rehearsal or a gig without duplicating a single audio file.</li>
+  </ul>
+
+  <h2 data-en="Backups: one archive beats a synced folder" data-ru="Бэкапы: один архив лучше синхронизируемой папки">Backups: one archive beats a synced folder</h2>
+  <p data-en="If your library lives in a cloud-synced folder, a half-finished sync is a library with missing files, and version history is whatever the provider decides to keep. JamCrate writes the entire library — tracks, tabs, markers, setlists and rigs — into a timestamped <code>.jamcrate.zip</code> in a Backups folder, verifies the archive before reporting success, and can re-verify any older version later. Each backup is a self-contained file you can put on a USB stick or send to another machine, and a restore brings every song back complete or not at all."
+     data-ru="Если библиотека лежит в облачной папке, недосинхронизированное состояние — это библиотека с потерянными файлами, а история версий — то, что решит хранить провайдер. JamCrate пишет всю библиотеку — треки, табы, маркеры, сет-листы и риги — в <code>.jamcrate.zip</code> с отметкой времени в папке Backups, проверяет архив перед тем, как сообщить об успехе, и может перепроверить любую старую версию позже. Каждый бэкап — самостоятельный файл, который можно положить на флешку или отправить на другую машину, а восстановление возвращает каждую песню целиком или не возвращает вообще.">If your library lives in a cloud-synced folder, a half-finished sync is a library with missing files, and version history is whatever the provider decides to keep. JamCrate writes the entire library — tracks, tabs, markers, setlists and rigs — into a timestamped <code>.jamcrate.zip</code> in a Backups folder, verifies the archive before reporting success, and can re-verify any older version later. Each backup is a self-contained file you can put on a USB stick or send to another machine, and a restore brings every song back complete or not at all.</p>
+
+  <h2 data-en="What else you could use" data-ru="Что ещё можно использовать">What else you could use</h2>
+  <table>
+    <tr>
+      <th data-en="Approach" data-ru="Подход">Approach</th>
+      <th data-en="Good at" data-ru="Хорош в">Good at</th>
+      <th data-en="Falls down when" data-ru="Ломается когда">Falls down when</th>
+    </tr>
+    <tr>
+      <td><b data-en="Finder + a naming rule" data-ru="Finder + правило имён">Finder + a naming rule</b></td>
+      <td data-en="zero setup, works everywhere" data-ru="нулевая настройка, работает везде">zero setup, works everywhere</td>
+      <td data-en="you need to search, reorder or remember where the solo is" data-ru="нужно искать, менять порядок или помнить, где соло">you need to search, reorder or remember where the solo is</td>
+    </tr>
+    <tr>
+      <td><b data-en="Music.app / iTunes" data-ru="Music.app / iTunes">Music.app / iTunes</b></td>
+      <td data-en="playback, playlists, syncing to a phone" data-ru="воспроизведение, плейлисты, синк на телефон">playback, playlists, syncing to a phone</td>
+      <td data-en="you have PDFs, Guitar Pro files or multiple versions of one song" data-ru="есть PDF, файлы Guitar Pro или несколько версий одной песни">you have PDFs, Guitar Pro files or multiple versions of one song</td>
+    </tr>
+    <tr>
+      <td><b>Plex / Roon</b></td>
+      <td data-en="streaming a big music collection around the house" data-ru="стриминг большой коллекции по дому">streaming a big music collection around the house</td>
+      <td data-en="you want to loop four bars and slow them down" data-ru="нужно зациклить четыре такта и замедлить их">you want to loop four bars and slow them down</td>
+    </tr>
+    <tr>
+      <td><b data-en="A spreadsheet" data-ru="Таблица">A spreadsheet</b></td>
+      <td data-en="tracking what you own and what you owe" data-ru="учёт того, что есть и что должен">tracking what you own and what you owe</td>
+      <td data-en="you actually want to play, which is the point" data-ru="ты хочешь играть — а ради этого всё и затевалось">you actually want to play, which is the point</td>
+    </tr>
+  </table>
+
+  <div class="box">
+    <h2 data-en="Point it at the folder you are avoiding" data-ru="Укажи на папку, которую обходишь стороной">Point it at the folder you are avoiding</h2>
+    <p data-en="JamCrate is a free beta for macOS 14+. Import the whole mess at once; it sorts itself into artists and songs and pairs the tabs."
+       data-ru="JamCrate — бесплатная бета для macOS 14+. Импортируй весь бардак разом: он сам разложится по исполнителям и песням, а табы склеятся.">JamCrate is a free beta for macOS 14+. Import the whole mess at once; it sorts itself into artists and songs and pairs the tabs.</p>
+    <p>
+      <a class="cta" href="https://github.com/vitas/jamcrate-beta/releases/download/v0.9.11-beta/JamCrate.dmg" data-en="Download for Mac" data-ru="Скачать для Mac">Download for Mac</a>
+      <a class="cta secondary" href="https://play.jamcrate.app" data-en="Try the player in your browser" data-ru="Открыть плеер в браузере">Try the player in your browser</a>
+    </p>
+    <p class="fine" data-en="About 20 MB · Universal build · signed and notarized by Apple · no account, nothing leaves your Mac." data-ru="Около 20 МБ · универсальная сборка · подписано и нотаризовано Apple · без аккаунта, ничего не покидает твой Mac.">About 20 MB · Universal build · signed and notarized by Apple · no account, nothing leaves your Mac.</p>
+    <p class="fine" data-en="Prefer Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code>" data-ru="Привык к Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code>">Prefer Homebrew? <code>brew install --cask vitas/jamcrate/jamcrate</code></p>
+  </div>
+
+  <section class="faq">
+    <h2 data-en="Questions" data-ru="Вопросы">Questions</h2>
+    <h3 data-en="Will importing copy my files or move them?" data-ru="Импорт копирует файлы или переносит их?">Will importing copy my files or move them?</h3>
+    <p data-en="It copies. Your originals stay exactly where they are, which means you can try it on a real folder without risking anything."
+       data-ru="Копирует. Оригиналы остаются ровно там, где лежали, — можно попробовать на настоящей папке, ничем не рискуя.">It copies. Your originals stay exactly where they are, which means you can try it on a real folder without risking anything.</p>
+    <h3 data-en="What if a song has three different versions?" data-ru="А если у песни три разные версии?">What if a song has three different versions?</h3>
+    <p data-en="Keep them as separate songs or separate files in one song folder. Marking the solo is what makes one version the practice version — the others can stay as references."
+       data-ru="Держи их отдельными песнями или отдельными файлами в одной папке песни. Именно разметка соло делает версию «рабочей» — остальные могут остаться для справки.">Keep them as separate songs or separate files in one song folder. Marking the solo is what makes one version the practice version — the others can stay as references.</p>
+    <h3 data-en="Does it work without an internet connection?" data-ru="Работает без интернета?">Does it work without an internet connection?</h3>
+    <p data-en="Yes. There is no account and no cloud storage; the library is a folder on your disk. Internet is only needed for the optional video-link import."
+       data-ru="Да. Аккаунта и облака нет, библиотека — это папка на диске. Интернет нужен только для необязательного импорта по ссылке на видео.">Yes. There is no account and no cloud storage; the library is a folder on your disk. Internet is only needed for the optional video-link import.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <ul>
+    <li><a href="/" data-en="JamCrate — everything you need to play a song" data-ru="JamCrate — всё, чтобы сыграть песню">JamCrate — everything you need to play a song</a></li>
+    <li><a href="/open-gp5-on-mac/" data-en="Open a Guitar Pro file on a Mac" data-ru="Открыть файл Guitar Pro на Mac">Open a Guitar Pro file on a Mac</a></li>
+    <li><a href="/loop-a-solo-while-practicing/" data-en="How to loop a solo while practising" data-ru="Как зациклить соло во время занятий">How to loop a solo while practising</a></li>
+    <li><a href="/slow-down-backing-track-without-pitch-change/" data-en="Slow a backing track down without changing pitch" data-ru="Замедлить минусовку без смены тона">Slow a backing track down without changing pitch</a></li>
+    <li><a href="/amazing-slow-downer-alternative-mac/" data-en="Amazing Slow Downer alternative for Mac" data-ru="Замена Amazing Slow Downer на Mac">Amazing Slow Downer alternative for Mac</a></li>
+    <li><a href="/transcribe-alternative-mac/" data-en="Transcribe! alternative for Mac" data-ru="Замена Transcribe! на Mac">Transcribe! alternative for Mac</a></li>
+    <li><a href="/anytune-alternative-mac/" data-en="Anytune alternative for Mac" data-ru="Замена Anytune на Mac">Anytune alternative for Mac</a></li>
+    <li><a href="/capo-alternative-mac/" data-en="Capo alternative for Mac" data-ru="Замена Capo на Mac">Capo alternative for Mac</a></li>
+    <li><a href="/moises-alternative-offline/" data-en="An offline Moises alternative" data-ru="Офлайн-замена Moises">An offline Moises alternative</a></li>
+  </ul>
+  <p data-en="JamCrate is built by a guitarist who got tired of searching for the right files instead of playing. Feedback: <a href=&quot;mailto:beta@jamcrate.app&quot;>beta@jamcrate.app</a>"
+       data-ru="JamCrate делает гитарист, который устал искать нужные файлы вместо того, чтобы играть. Обратная связь: <a href=&quot;mailto:beta@jamcrate.app&quot;>beta@jamcrate.app</a>">JamCrate is built by a guitarist who got tired of searching for the right files instead of playing. Feedback: <a href="mailto:beta@jamcrate.app">beta@jamcrate.app</a></p>
+</footer>
+
+<script src="../lang.js"></script>
+<script src="../site.js" defer></script>
+</body>
+</html>
